@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<title>Tổng ôn tập kiến thức Boya 1 | Trung tâm Hoài Phương HSK</title>
+<style>
+:root{
+  --red:#c0392b;
+  --red-dark:#a5281a;
+  --red-light:#fdecea;
+  --gold:#d4a017;
+  --gold-light:#fff8e1;
+  --green:#2e8b57;
+  --green-light:#e8f8ee;
+  --ink:#232323;
+  --ink-soft:#5a5a5a;
+  --paper:#fffaf3;
+  --card:#ffffff;
+  --border:#eadfce;
+  --shadow: 0 4px 18px rgba(192,57,43,0.08);
+  --radius:16px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Nunito', 'Segoe UI', 'Arial', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  background:
+    radial-gradient(circle at 10% 5%, #fff2e0 0%, transparent 45%),
+    radial-gradient(circle at 90% 0%, #fdece9 0%, transparent 40%),
+    var(--paper);
+  color:var(--ink);
+  min-height:100vh;
+  padding-bottom:60px;
+}
+.han{font-family:'SimHei','Microsoft YaHei','PingFang SC','Heiti SC',sans-serif;}
+.vi-text{font-family:'Be Vietnam Pro','Nunito','Segoe UI','Arial',sans-serif;}
+::-webkit-scrollbar{width:10px; height:10px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:#e2c9a0; border-radius:10px;}
+
+/* ======= HEADER ======= */
+header.site-header{
+  background:linear-gradient(135deg, var(--red) 0%, #931f14 100%);
+  color:#fff;
+  padding:26px 20px 22px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 6px 24px rgba(160,40,26,0.28);
+}
+header.site-header::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.09) 1.5px, transparent 1.5px);
+  background-size:22px 22px;
+  opacity:0.5;
+}
+header.site-header .deco{
+  position:absolute; font-size:90px; opacity:0.09; font-family:'SimHei',sans-serif; user-select:none; pointer-events:none;
+}
+header .deco.d1{top:-20px; left:2%; transform:rotate(-12deg);}
+header .deco.d2{bottom:-30px; right:3%; transform:rotate(10deg);}
+.header-inner{position:relative; z-index:2; max-width:1000px; margin:0 auto;}
+.badge-center{
+  display:inline-block;
+  background:rgba(255,255,255,0.16);
+  border:1px solid rgba(255,255,255,0.35);
+  padding:5px 16px;
+  border-radius:30px;
+  font-size:0.82rem;
+  letter-spacing:0.5px;
+  margin-bottom:12px;
+  font-weight:700;
+}
+h1.main-title{
+  font-size:clamp(1.5rem, 4.2vw, 2.5rem);
+  font-weight:900;
+  letter-spacing:0.5px;
+  text-shadow:0 2px 10px rgba(0,0,0,0.15);
+  margin-bottom:6px;
+}
+.subtitle{
+  font-size:clamp(0.95rem, 2vw, 1.15rem);
+  opacity:0.95;
+  font-weight:600;
+}
+.subtitle .han{font-size:1.15em; margin-left:6px;}
+
+/* ======= PROGRESS STRIP ======= */
+.progress-strip{
+  max-width:1000px;
+  margin:16px auto 0;
+  padding:0 20px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.progress-pill{
+  background:rgba(255,255,255,0.14);
+  border:1px solid rgba(255,255,255,0.3);
+  border-radius:30px;
+  padding:6px 14px;
+  font-size:0.78rem;
+  font-weight:700;
+}
+
+/* ======= NAV TABS ======= */
+.tab-bar-wrap{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,250,243,0.96);
+  backdrop-filter:blur(8px);
+  border-bottom:2px solid var(--border);
+  box-shadow:0 2px 10px rgba(0,0,0,0.04);
+}
+.tab-bar{
+  max-width:1000px;
+  margin:0 auto;
+  display:flex;
+  gap:8px;
+  padding:12px 16px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.tab-bar::-webkit-scrollbar{display:none;}
+.tab-btn{
+  flex:1 1 auto;
+  white-space:nowrap;
+  background:transparent;
+  border:2px solid transparent;
+  color:var(--ink-soft);
+  font-family:inherit;
+  font-weight:800;
+  font-size:0.95rem;
+  padding:10px 18px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:all 0.25s ease;
+  display:flex; align-items:center; gap:8px; justify-content:center;
+}
+.tab-btn:hover{background:var(--gold-light); color:var(--red-dark);}
+.tab-btn.active{
+  background:linear-gradient(135deg, var(--red) 0%, #931f14 100%);
+  color:#fff;
+  box-shadow:0 4px 14px rgba(192,57,43,0.35);
+  transform:translateY(-1px);
+}
+.tab-btn .emoji{font-size:1.15em;}
+
+/* Sub-tabs (bài tập 5 dạng) */
+.subtab-bar{
+  display:flex; gap:8px; flex-wrap:wrap;
+  margin-bottom:22px;
+  padding-bottom:14px;
+  border-bottom:2px dashed var(--border);
+}
+.subtab-btn{
+  background:var(--card);
+  border:2px solid var(--border);
+  color:var(--ink-soft);
+  font-family:inherit;
+  font-weight:700;
+  font-size:0.88rem;
+  padding:8px 16px;
+  border-radius:30px;
+  cursor:pointer;
+  transition:all 0.2s ease;
+}
+.subtab-btn:hover{border-color:var(--gold); color:var(--red-dark);}
+.subtab-btn.active{
+  background:var(--gold);
+  border-color:var(--gold);
+  color:#fff;
+  box-shadow:0 3px 10px rgba(212,160,23,0.4);
+}
+
+/* ======= MAIN CONTAINER ======= */
+main{max-width:1000px; margin:0 auto; padding:26px 16px 20px;}
+.view{display:none; animation:fadeIn 0.35s ease;}
+.view.active{display:block;}
+.subview{display:none; animation:fadeIn 0.3s ease;}
+.subview.active{display:block;}
+@keyframes fadeIn{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+
+.section-title{
+  display:flex; align-items:center; gap:10px;
+  font-size:clamp(1.15rem,2.6vw,1.5rem);
+  font-weight:900;
+  color:var(--red-dark);
+  margin-bottom:6px;
+}
+.section-desc{
+  color:var(--ink-soft);
+  font-size:0.95rem;
+  margin-bottom:20px;
+  font-weight:600;
+}
+
+/* ======= TOOLBAR (Từ vựng) ======= */
+.toolbar{
+  display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+  margin-bottom:20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}
+.search-box{
+  flex:1 1 200px;
+  position:relative;
+}
+.search-box input{
+  width:100%;
+  font-family:inherit;
+  font-size:0.95rem;
+  padding:9px 14px 9px 36px;
+  border:2px solid var(--border);
+  border-radius:10px;
+  background:#fdfaf5;
+  outline:none;
+  transition:border-color 0.2s;
+}
+.search-box input:focus{border-color:var(--gold);}
+.search-box::before{
+  content:"🔍";
+  position:absolute; left:11px; top:50%; transform:translateY(-50%);
+  font-size:0.9rem; opacity:0.6;
+}
+.filter-select{
+  font-family:inherit; font-weight:700; font-size:0.88rem;
+  padding:9px 12px;
+  border:2px solid var(--border);
+  border-radius:10px;
+  background:#fdfaf5;
+  color:var(--ink);
+  cursor:pointer;
+  outline:none;
+}
+.view-toggle{
+  display:flex; gap:4px; background:#f2e9d8; padding:4px; border-radius:10px;
+}
+.view-toggle button{
+  border:none; background:transparent; padding:7px 12px; border-radius:8px;
+  cursor:pointer; font-family:inherit; font-weight:700; font-size:0.85rem;
+  color:var(--ink-soft); transition:all 0.2s;
+}
+.view-toggle button.active{background:#fff; color:var(--red-dark); box-shadow:0 2px 6px rgba(0,0,0,0.08);}
+.vocab-count{
+  font-size:0.85rem; font-weight:700; color:var(--gold);
+  background:var(--gold-light); padding:6px 12px; border-radius:20px;
+}
+
+/* ======= VOCAB LIST TABLE VIEW ======= */
+.vocab-table-wrap{
+  background:var(--card);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+.vocab-group-header{
+  background:linear-gradient(135deg, var(--gold-light), #fff);
+  padding:10px 18px;
+  font-weight:900;
+  color:var(--red-dark);
+  font-size:0.95rem;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  position:sticky; top:0;
+}
+.vocab-row{
+  display:grid;
+  grid-template-columns:44px 1fr 1fr 1.4fr;
+  gap:10px;
+  align-items:center;
+  padding:11px 18px;
+  border-bottom:1px solid #f4ece0;
+  transition:background 0.15s;
+  cursor:pointer;
+}
+.vocab-row:hover{background:var(--red-light);}
+.vocab-row .stt{color:#c9b691; font-weight:800; font-size:0.85rem;}
+.vocab-row .han{font-size:1.4rem; font-weight:700; color:var(--ink);}
+.vocab-row .pinyin{font-weight:700; color:var(--red-dark); font-size:1rem;}
+.vocab-row .nghia{color:var(--ink-soft); font-weight:600; font-size:0.95rem;}
+@media (max-width:640px){
+  .vocab-row{grid-template-columns:30px 1fr 1fr; row-gap:4px;}
+  .vocab-row .nghia{grid-column:2 / 4; font-size:0.88rem;}
+}
+
+/* ======= VOCAB CARD (FLASHCARD) VIEW ======= */
+.flash-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(190px,1fr));
+  gap:16px;
+}
+.flashcard{
+  perspective:1200px;
+  height:150px;
+  cursor:pointer;
+}
+.flashcard-inner{
+  position:relative; width:100%; height:100%;
+  transition:transform 0.55s cubic-bezier(.4,.2,.2,1);
+  transform-style:preserve-3d;
+}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg);}
+.flashcard-face{
+  position:absolute; inset:0;
+  backface-visibility:hidden;
+  border-radius:14px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:12px;
+  text-align:center;
+  box-shadow:0 4px 14px rgba(0,0,0,0.08);
+}
+.flashcard-front{
+  background:linear-gradient(150deg,#fff 60%, var(--gold-light));
+  border:2px solid var(--border);
+}
+.flashcard-front .stt-badge{
+  position:absolute; top:8px; left:10px;
+  font-size:0.68rem; font-weight:800; color:#c9b691;
+}
+.flashcard-front .bai-badge{
+  position:absolute; top:8px; right:10px;
+  font-size:0.65rem; font-weight:800;
+  background:var(--red); color:#fff;
+  padding:2px 8px; border-radius:10px;
+}
+.flashcard-front .han{font-size:2.3rem; font-weight:700;}
+.flashcard-back{
+  background:linear-gradient(150deg, var(--red) 40%, #931f14);
+  color:#fff;
+  transform:rotateY(180deg);
+}
+.flashcard-back .pinyin{font-size:1.15rem; font-weight:800; margin-bottom:6px;}
+.flashcard-back .nghia{font-size:0.92rem; font-weight:600; opacity:0.95; line-height:1.35;}
+.flip-hint{font-size:0.65rem; opacity:0.6; margin-top:8px; font-weight:700;}
+
+/* ======= FLASHCARD ĐƠN (giữa trang) ======= */
+.flash-single-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:10px 0 30px;
+}
+.flash-single-toolbar{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  justify-content:center;
+  margin-bottom:22px;
+}
+.flash-single-toolbar .fs-btn{
+  font-family:inherit; font-weight:800; font-size:0.9rem;
+  padding:9px 18px; border-radius:30px; cursor:pointer;
+  border:2px solid var(--border);
+  background:var(--card);
+  color:var(--ink-soft);
+  transition:all 0.2s;
+  display:flex; align-items:center; gap:6px;
+}
+.flash-single-toolbar .fs-btn:hover{border-color:var(--gold); color:var(--red-dark);}
+.flash-single-toolbar .fs-btn.shuffled{background:var(--gold); border-color:var(--gold); color:#fff;}
+.flash-single-progress{
+  font-weight:800; color:var(--gold); background:var(--gold-light);
+  padding:8px 16px; border-radius:30px; font-size:0.9rem;
+}
+.flash-single-stage{
+  perspective:1800px;
+  width:100%;
+  max-width:560px;
+  height:340px;
+  cursor:pointer;
+}
+.flash-single-inner{
+  position:relative; width:100%; height:100%;
+  transition:transform 0.5s cubic-bezier(.4,.2,.2,1);
+  transform-style:preserve-3d;
+}
+.flash-single-stage.flipped .flash-single-inner{transform:rotateY(180deg);}
+.flash-single-face{
+  position:absolute; inset:0;
+  backface-visibility:hidden;
+  border-radius:24px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 10px 34px rgba(192,57,43,0.14);
+}
+.flash-single-front{
+  background:linear-gradient(150deg,#fff 55%, var(--gold-light));
+  border:3px solid var(--border);
+}
+.flash-single-front .fs-bai-badge{
+  position:absolute; top:18px; right:20px;
+  font-size:0.85rem; font-weight:900;
+  background:var(--red); color:#fff;
+  padding:5px 14px; border-radius:14px;
+}
+.flash-single-front .fs-stt-badge{
+  position:absolute; top:18px; left:20px;
+  font-size:0.85rem; font-weight:900; color:#c9b691;
+}
+.flash-single-front .han{font-size:5.2rem; font-weight:700; line-height:1.1;}
+.flash-single-hint{font-size:0.85rem; opacity:0.55; margin-top:18px; font-weight:800;}
+.flash-single-back{
+  background:linear-gradient(150deg, var(--red) 40%, #931f14);
+  color:#fff;
+  transform:rotateY(180deg);
+  gap:14px;
+}
+.flash-single-back .han-echo{font-size:2rem; font-weight:700; opacity:0.85; margin-bottom:6px;}
+.flash-single-back .pinyin{font-size:2.1rem; font-weight:900;}
+.flash-single-back .nghia{font-size:1.7rem; font-weight:700; line-height:1.4;}
+.flash-single-nav{
+  display:flex; align-items:center; gap:18px;
+  margin-top:24px;
+}
+.flash-single-nav .nav-btn{
+  width:52px; height:52px; border-radius:50%;
+  border:none; cursor:pointer;
+  background:var(--red);
+  color:#fff; font-size:1.4rem;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 14px rgba(192,57,43,0.35);
+  transition:transform 0.15s;
+}
+.flash-single-nav .nav-btn:hover{transform:scale(1.08);}
+.flash-single-nav .nav-btn:disabled{opacity:0.35; cursor:not-allowed; transform:none;}
+@media (max-width:600px){
+  .flash-single-stage{height:300px;}
+  .flash-single-front .han{font-size:3.6rem;}
+  .flash-single-back .pinyin{font-size:1.6rem;}
+  .flash-single-back .nghia{font-size:1.3rem;}
+}
+body.presenting .flash-single-stage{max-width:760px; height:440px;}
+body.presenting .flash-single-front .han{font-size:7rem;}
+body.presenting .flash-single-back .pinyin{font-size:2.7rem;}
+body.presenting .flash-single-back .nghia{font-size:2.2rem;}
+body.presenting .flash-single-toolbar,
+body.presenting .flash-single-hint{font-size:1.05rem;}
+body.presenting .flash-single-progress{font-size:1.15rem;}
+
+/* ======= GRAMMAR ======= */
+.grammar-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-left:6px solid var(--gold);
+  border-radius:14px;
+  padding:18px 20px;
+  margin-bottom:16px;
+  box-shadow:var(--shadow);
+}
+.grammar-card h3{
+  color:var(--red-dark);
+  font-size:1.08rem;
+  margin-bottom:10px;
+  display:flex; align-items:center; gap:8px;
+}
+.grammar-structure{
+  background:var(--gold-light);
+  border:1px dashed var(--gold);
+  border-radius:10px;
+  padding:10px 14px;
+  font-weight:800;
+  color:#8a6300;
+  margin-bottom:10px;
+  font-size:0.98rem;
+}
+.grammar-structure .han{font-size:1.1em;}
+.grammar-explain{
+  color:var(--ink-soft);
+  font-size:0.92rem;
+  line-height:1.55;
+  margin-bottom:12px;
+  font-weight:600;
+}
+.grammar-examples{
+  background:#fbfaf7;
+  border-radius:10px;
+  padding:6px 16px;
+}
+.grammar-examples .ex-item{
+  padding:12px 0;
+  border-bottom:1px solid #f0e9db;
+  color:var(--ink);
+}
+.grammar-examples .ex-item:last-child{border-bottom:none;}
+.grammar-examples .ex-item .ex-han{
+  font-size:1.35rem;
+  font-weight:700;
+}
+.grammar-examples .ex-item .ex-han::before{content:"▸ "; color:var(--red); font-weight:900;}
+.grammar-examples .ex-item .ex-pinyin{
+  display:block;
+  font-family:'Be Vietnam Pro','Nunito','Segoe UI','Arial',sans-serif;
+  font-style:italic;
+  font-weight:700;
+  color:var(--red-dark);
+  font-size:0.95rem;
+  margin-top:3px;
+  margin-left:18px;
+}
+.grammar-examples .ex-item .ex-vi{
+  display:block;
+  font-family:'Be Vietnam Pro','Nunito','Segoe UI','Arial',sans-serif;
+  color:var(--ink-soft);
+  font-weight:600;
+  font-size:0.92rem;
+  margin-top:2px;
+  margin-left:18px;
+}
+body.presenting .grammar-examples .ex-item .ex-han{font-size:1.9rem;}
+body.presenting .grammar-examples .ex-item .ex-pinyin{font-size:1.3rem;}
+body.presenting .grammar-examples .ex-item .ex-vi{font-size:1.3rem;}
+
+/* ======= EXERCISES ======= */
+.ex-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px 20px;
+  margin-bottom:14px;
+  box-shadow:var(--shadow);
+}
+.ex-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:30px; height:30px;
+  background:var(--red);
+  color:#fff; font-weight:900; font-size:0.9rem;
+  border-radius:50%;
+  margin-right:8px;
+  flex-shrink:0;
+}
+.ex-q-row{display:flex; align-items:flex-start; margin-bottom:12px;}
+.ex-q-text{font-size:1.15rem; font-weight:700; padding-top:3px;}
+.ex-options{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-left:38px;
+}
+@media (max-width:520px){.ex-options{grid-template-columns:1fr;}}
+.opt-btn{
+  display:flex; align-items:center; gap:8px;
+  border:2px solid var(--border);
+  background:#fdfaf5;
+  border-radius:10px;
+  padding:9px 14px;
+  font-family:inherit;
+  font-size:0.95rem;
+  font-weight:700;
+  cursor:pointer;
+  text-align:left;
+  transition:all 0.18s;
+  color:var(--ink);
+}
+.opt-btn:hover{border-color:var(--gold); background:var(--gold-light);}
+.opt-btn .opt-letter{
+  width:24px; height:24px; border-radius:50%;
+  background:#e9e0cd; color:var(--ink-soft);
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.8rem; font-weight:900; flex-shrink:0;
+}
+.opt-btn.selected{border-color:var(--gold); background:var(--gold-light);}
+.opt-btn.correct{
+  border-color:var(--green); background:var(--green-light); color:#1b5e39;
+}
+.opt-btn.correct .opt-letter{background:var(--green); color:#fff;}
+.opt-btn.wrong{
+  border-color:var(--red); background:var(--red-light); color:var(--red-dark);
+}
+.opt-btn.wrong .opt-letter{background:var(--red); color:#fff;}
+.opt-btn.disabled{cursor:default; pointer-events:none;}
+.opt-btn.disabled:not(.correct):not(.wrong){opacity:0.55;}
+
+.fill-blank-item{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:12px 0; border-bottom:1px solid #f2ebdd;
+}
+.fill-blank-item:last-child{border-bottom:none;}
+.fb-prompt{font-size:1.3rem; font-weight:700; min-width:120px;}
+.fb-prompt.pinyin-prompt{font-size:1.05rem; font-family:'Nunito',sans-serif; color:var(--red-dark);}
+.fb-input{
+  flex:1 1 160px;
+  font-family:inherit;
+  font-size:1rem; font-weight:700;
+  padding:8px 12px;
+  border:2px solid var(--border);
+  border-radius:8px;
+  outline:none;
+  background:#fdfaf5;
+}
+.fb-input:focus{border-color:var(--gold);}
+.fb-input.correct{border-color:var(--green); background:var(--green-light); color:#1b5e39;}
+.fb-input.wrong{border-color:var(--red); background:var(--red-light); color:var(--red-dark);}
+.fb-check-icon{font-size:1.2rem; width:26px; text-align:center;}
+.fb-answer-reveal{font-size:0.85rem; color:var(--ink-soft); font-weight:700; display:none;}
+
+.translate-item{margin-bottom:16px;}
+.translate-vi{font-weight:700; font-size:1.02rem; margin-bottom:8px;}
+.translate-textarea{
+  width:100%;
+  font-family:inherit; font-size:1.05rem;
+  border:2px solid var(--border);
+  border-radius:10px;
+  padding:10px 14px;
+  min-height:44px;
+  outline:none;
+  background:#fdfaf5;
+  resize:vertical;
+}
+.translate-textarea:focus{border-color:var(--gold);}
+.translate-toggle-btn{
+  margin-top:8px;
+  background:none; border:2px solid var(--gold); color:#8a6300;
+  font-family:inherit; font-weight:800; font-size:0.82rem;
+  padding:6px 14px; border-radius:20px; cursor:pointer;
+}
+.translate-answer{
+  display:none;
+  margin-top:8px;
+  background:var(--green-light);
+  border-left:4px solid var(--green);
+  padding:10px 14px;
+  border-radius:8px;
+  font-size:1.1rem;
+  font-weight:700;
+  color:#1b5e39;
+}
+
+.dialogue-box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px 20px;
+  margin-bottom:20px;
+  box-shadow:var(--shadow);
+}
+.dialogue-line{
+  display:flex; gap:10px;
+  padding:7px 0;
+  font-size:1.05rem;
+  line-height:1.6;
+}
+.dialogue-name{
+  font-weight:900; color:var(--red-dark);
+  flex-shrink:0; min-width:64px;
+}
+.tf-item{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:12px 14px;
+  border-bottom:1px solid #f2ebdd;
+}
+.tf-item:last-child{border-bottom:none;}
+.tf-q{flex:1 1 260px; font-weight:700; font-size:1rem;}
+.tf-buttons{display:flex; gap:8px;}
+.tf-btn{
+  border:2px solid var(--border);
+  background:#fdfaf5;
+  font-family:inherit; font-weight:900; font-size:0.85rem;
+  padding:7px 16px; border-radius:20px; cursor:pointer;
+  transition:all 0.18s;
+}
+.tf-btn.correct{border-color:var(--green); background:var(--green); color:#fff;}
+.tf-btn.wrong{border-color:var(--red); background:var(--red); color:#fff;}
+.tf-btn.disabled{pointer-events:none;}
+.tf-explain{
+  flex-basis:100%;
+  font-size:0.85rem; color:var(--ink-soft); font-weight:600;
+  display:none;
+  padding-top:4px;
+}
+
+.exercise-toolbar{
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+  margin-bottom:16px;
+}
+.check-all-btn, .reset-btn{
+  font-family:inherit; font-weight:800; font-size:0.88rem;
+  padding:9px 18px; border-radius:30px; cursor:pointer;
+  border:none; transition:all 0.2s;
+}
+.check-all-btn{background:var(--red); color:#fff; box-shadow:0 3px 10px rgba(192,57,43,0.3);}
+.check-all-btn:hover{background:var(--red-dark);}
+.reset-btn{background:#efe6d3; color:var(--ink-soft);}
+.reset-btn:hover{background:#e2d5b8;}
+.score-banner{
+  display:none;
+  background:linear-gradient(135deg, var(--green), #237a4b);
+  color:#fff;
+  border-radius:14px;
+  padding:16px 20px;
+  text-align:center;
+  font-size:1.15rem;
+  font-weight:900;
+  margin-bottom:18px;
+  box-shadow:0 4px 16px rgba(46,139,87,0.3);
+}
+
+/* ======= PRESENT MODE (trình chiếu) ======= */
+.present-btn{
+  position:fixed; bottom:22px; right:22px; z-index:200;
+  background:linear-gradient(135deg, var(--gold), #b8860b);
+  color:#fff; border:none;
+  width:58px; height:58px; border-radius:50%;
+  font-size:1.5rem;
+  cursor:pointer;
+  box-shadow:0 6px 20px rgba(212,160,23,0.45);
+  display:flex; align-items:center; justify-content:center;
+  transition:transform 0.2s;
+}
+.present-btn:hover{transform:scale(1.08);}
+/* ============================================================
+   CHẾ ĐỘ TRÌNH CHIẾU — giữ nguyên giao diện sáng gốc,
+   chỉ phóng to cỡ chữ toàn bộ (đặc biệt phần tiếng Việt) để nhìn xa
+   ============================================================ */
+body.presenting .site-header{display:none;}
+body.presenting main{
+  max-width:1400px;
+  padding:26px 44px;
+}
+body.presenting .section-title{font-size:clamp(2rem,4.2vw,2.9rem);}
+body.presenting .section-desc{font-size:1.35rem; font-weight:700;}
+
+/* Thanh tab chính vẫn dùng được khi trình chiếu — phóng to */
+body.presenting .tab-bar{padding:16px 20px; gap:12px;}
+body.presenting .tab-btn{font-size:1.25rem; padding:14px 24px;}
+
+/* Thanh tab con (5 dạng bài tập) vẫn dùng được khi trình chiếu — phóng to */
+body.presenting .subtab-bar{gap:12px; margin-bottom:28px; padding-bottom:18px;}
+body.presenting .subtab-btn{font-size:1.1rem; padding:12px 22px;}
+
+/* Từ vựng */
+body.presenting .vocab-row{
+  grid-template-columns:70px 1.2fr 1.2fr 1.8fr;
+  padding:20px 24px;
+}
+body.presenting .vocab-group-header{font-size:1.3rem; padding:14px 22px;}
+body.presenting .vocab-row .stt{font-size:1.1rem;}
+body.presenting .vocab-row .han{font-size:2.8rem;}
+body.presenting .vocab-row .pinyin{font-size:1.7rem;}
+body.presenting .vocab-row .nghia{font-size:1.7rem; font-weight:700;}
+body.presenting .toolbar,
+body.presenting .flash-grid .flip-hint{display:none;}
+body.presenting .flashcard{height:220px;}
+body.presenting .flashcard-front .han{font-size:3.4rem;}
+body.presenting .flashcard-back .pinyin{font-size:1.6rem;}
+body.presenting .flashcard-back .nghia{font-size:1.35rem;}
+
+/* Ngữ pháp */
+body.presenting .grammar-card{padding:26px 28px; margin-bottom:22px;}
+body.presenting .grammar-card h3{font-size:1.7rem; margin-bottom:14px;}
+body.presenting .grammar-structure{font-size:1.55rem; padding:14px 18px;}
+body.presenting .grammar-explain{font-size:1.35rem; line-height:1.6;}
+
+/* Bài tập */
+body.presenting .ex-card{padding:24px 26px;}
+body.presenting .ex-num{width:38px; height:38px; font-size:1.15rem;}
+body.presenting .ex-q-text{font-size:1.65rem;}
+body.presenting .ex-options{gap:14px; margin-left:48px;}
+body.presenting .opt-btn{font-size:1.4rem; padding:16px 20px;}
+body.presenting .opt-letter{width:32px; height:32px; font-size:1.05rem;}
+body.presenting .fb-prompt{font-size:1.7rem;}
+body.presenting .fb-prompt.pinyin-prompt{font-size:1.4rem;}
+body.presenting .fb-input{font-size:1.3rem; padding:12px 16px;}
+body.presenting .fill-blank-item{gap:18px; padding:16px 0;}
+body.presenting .translate-vi{font-size:1.4rem;}
+body.presenting .translate-textarea{font-size:1.4rem;}
+body.presenting .translate-toggle-btn{font-size:1.05rem; padding:9px 18px;}
+body.presenting .translate-answer{font-size:1.6rem;}
+body.presenting .translate-item{margin-bottom:24px;}
+body.presenting .dialogue-box{padding:26px 28px;}
+body.presenting .dialogue-line{font-size:1.5rem; padding:10px 0;}
+body.presenting .dialogue-name{font-size:1.5rem; min-width:90px;}
+body.presenting .tf-item{gap:18px; padding:16px 18px;}
+body.presenting .tf-q{font-size:1.35rem;}
+body.presenting .tf-btn{font-size:1.1rem; padding:10px 22px;}
+body.presenting .tf-explain{font-size:1.15rem;}
+body.presenting .score-banner{font-size:1.5rem; padding:20px 24px;}
+body.presenting .check-all-btn,
+body.presenting .reset-btn{font-size:1.05rem; padding:12px 24px;}
+
+body.presenting .exit-present{display:flex !important;}
+body.presenting .present-btn{display:none;}
+
+.exit-present{
+  display:none;
+  position:fixed; bottom:22px; right:22px; z-index:210;
+  background:var(--red);
+  color:#fff; border:none;
+  padding:14px 22px; border-radius:30px;
+  font-family:inherit; font-weight:800; cursor:pointer;
+  align-items:center; gap:6px;
+  box-shadow:0 6px 20px rgba(192,57,43,0.4);
+}
+.exit-present:hover{background:var(--red-dark);}
+
+/* ======= FOOTER ======= */
+footer{
+  text-align:center;
+  padding:26px 20px 10px;
+  color:#b09a72;
+  font-size:0.82rem;
+  font-weight:700;
+}
+
+/* toast */
+.toast{
+  position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(20px);
+  background:var(--ink); color:#fff;
+  padding:11px 22px; border-radius:30px;
+  font-weight:700; font-size:0.9rem;
+  opacity:0; pointer-events:none;
+  transition:all 0.3s;
+  z-index:300;
+  box-shadow:0 6px 20px rgba(0,0,0,0.3);
+}
+.toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <span class="deco d1 han">汉</span>
+  <span class="deco d2 han">语</span>
+  <div class="header-inner">
+    <span class="badge-center">TRUNG TÂM HOÀI PHƯƠNG HSK</span>
+    <h1 class="main-title">📚 TỔNG ÔN TẬP KIẾN THỨC BOYA 1</h1>
+    <div class="subtitle">Bài 1 – 20 <span class="han">·</span> Từ vựng · Ngữ pháp · Bài tập tổng hợp</div>
+    <div class="progress-strip">
+      <span class="progress-pill">📖 426 từ vựng</span>
+      <span class="progress-pill">📐 12 điểm ngữ pháp</span>
+      <span class="progress-pill">📝 5 dạng bài tập</span>
+    </div>
+  </div>
+</header>
+
+<div class="tab-bar-wrap">
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-view="vocab"><span class="emoji">📚</span> TỪ VỰNG</button>
+    <button class="tab-btn" data-view="grammar"><span class="emoji">📖</span> NGỮ PHÁP</button>
+    <button class="tab-btn" data-view="exercise"><span class="emoji">📝</span> BÀI TẬP</button>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ============ VIEW: TỪ VỰNG ============ -->
+  <section class="view active" id="view-vocab">
+    <div class="section-title">📚 Từ vựng tổng hợp Bài 1–20</div>
+    <div class="section-desc">Đối chiếu đầy đủ theo bảng 词语表 từng bài trong giáo trình Boya Sơ cấp I gốc.</div>
+
+    <div class="toolbar">
+      <div class="search-box">
+        <input type="text" id="vocabSearch" placeholder="Tìm chữ Hán / pinyin / nghĩa...">
+      </div>
+      <select class="filter-select" id="vocabFilterBai">
+        <option value="all">Tất cả các bài</option>
+      </select>
+      <div class="view-toggle">
+        <button id="btnViewTable" class="active">☰ Bảng</button>
+        <button id="btnViewCard">🗂️ Lưới thẻ</button>
+        <button id="btnViewFlash">🔄 Flashcard</button>
+      </div>
+      <span class="vocab-count" id="vocabCount">426 từ</span>
+    </div>
+
+    <div id="vocabTableWrap" class="vocab-table-wrap"></div>
+    <div id="vocabCardWrap" class="flash-grid" style="display:none;"></div>
+    <div id="vocabFlashWrap" class="flash-single-wrap" style="display:none;"></div>
+  </section>
+
+  <!-- ============ VIEW: NGỮ PHÁP ============ -->
+  <section class="view" id="view-grammar">
+    <div class="section-title">📖 12 điểm ngữ pháp trọng tâm</div>
+    <div class="section-desc">Đối chiếu trực tiếp với phần 语言点 (Language Points) trong giáo trình Boya Sơ cấp I gốc, theo đúng thứ tự các bài.</div>
+    <div id="grammarWrap"></div>
+  </section>
+
+  <!-- ============ VIEW: BÀI TẬP ============ -->
+  <section class="view" id="view-exercise">
+    <div class="section-title">📝 Bài tập tổng hợp (Bài 1–20)</div>
+    <div class="section-desc">Chọn 1 trong 5 dạng bài dưới đây để luyện tập.</div>
+
+    <div class="subtab-bar">
+      <button class="subtab-btn active" data-sub="e1">Bài 1 · Pinyin ⇄ Hán tự</button>
+      <button class="subtab-btn" data-sub="e2">Bài 2 · Nhận diện chữ Hán</button>
+      <button class="subtab-btn" data-sub="e3">Bài 3 · Ngữ pháp</button>
+      <button class="subtab-btn" data-sub="e4">Bài 4 · Dịch câu</button>
+      <button class="subtab-btn" data-sub="e5">Bài 5 · Đọc hiểu Đúng/Sai</button>
+    </div>
+
+    <!-- Bài 1 -->
+    <div class="subview active" id="sub-e1">
+      <div class="ex-card">
+        <div style="font-weight:800; color:var(--red-dark); margin-bottom:10px;">✏️ Viết phiên âm hoặc chữ Hán cho các từ sau</div>
+        <div id="e1Wrap"></div>
+        <div class="exercise-toolbar" style="margin-top:14px;">
+          <button class="check-all-btn" id="checkE1Btn">✓ Kiểm tra đáp án</button>
+          <button class="reset-btn" id="resetE1Btn">↺ Làm lại</button>
+        </div>
+        <div class="score-banner" id="e1Score"></div>
+      </div>
+    </div>
+
+    <!-- Bài 2 -->
+    <div class="subview" id="sub-e2">
+      <div id="e2Wrap"></div>
+      <div class="score-banner" id="e2Score"></div>
+    </div>
+
+    <!-- Bài 3 -->
+    <div class="subview" id="sub-e3">
+      <div id="e3Wrap"></div>
+      <div class="score-banner" id="e3Score"></div>
+    </div>
+
+    <!-- Bài 4 -->
+    <div class="subview" id="sub-e4">
+      <div class="ex-card">
+        <div style="font-weight:800; color:var(--red-dark); margin-bottom:14px;">🈺 Dịch các câu sau sang tiếng Trung</div>
+        <div id="e4Wrap"></div>
+      </div>
+    </div>
+
+    <!-- Bài 5 -->
+    <div class="subview" id="sub-e5">
+      <div class="dialogue-box" id="dialogueWrap"></div>
+      <div class="ex-card">
+        <div style="font-weight:800; color:var(--red-dark); margin-bottom:6px;">✔️ Đọc đoạn hội thoại trên và phán đoán Đúng / Sai</div>
+        <div id="e5Wrap"></div>
+        <div class="score-banner" id="e5Score"></div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<button class="present-btn" id="presentBtn" title="Chế độ trình chiếu">🖥️</button>
+<button class="exit-present" id="exitPresentBtn">✕ Thoát trình chiếu</button>
+
+<footer>Tài liệu dành riêng cho học viên Trung tâm Hoài Phương HSK</footer>
+
+<div class="toast" id="toast"></div>
+
+</body>
+
+<script>
+/* ============================================================
+   DỮ LIỆU (đối chiếu chính xác với tài liệu gốc Trung tâm Hoài Phương HSK)
+   ============================================================ */
+const VOCAB = [{"stt": 1, "han": "你好", "pinyin": "nǐ hǎo", "nghia": "xin chào", "bai": 1}, {"stt": 2, "han": "好", "pinyin": "hǎo", "nghia": "tốt, khỏe", "bai": 1}, {"stt": 3, "han": "你", "pinyin": "nǐ", "nghia": "bạn", "bai": 1}, {"stt": 4, "han": "是", "pinyin": "shì", "nghia": "là", "bai": 1}, {"stt": 5, "han": "老师", "pinyin": "lǎoshī", "nghia": "giáo viên", "bai": 1}, {"stt": 6, "han": "吗", "pinyin": "ma", "nghia": "(trợ từ nghi vấn)", "bai": 1}, {"stt": 7, "han": "不", "pinyin": "bù", "nghia": "không", "bai": 1}, {"stt": 8, "han": "我", "pinyin": "wǒ", "nghia": "tôi", "bai": 1}, {"stt": 9, "han": "学生", "pinyin": "xuésheng", "nghia": "học sinh", "bai": 1}, {"stt": 10, "han": "她", "pinyin": "tā", "nghia": "cô ấy", "bai": 1}, {"stt": 11, "han": "谢谢", "pinyin": "xièxie", "nghia": "cảm ơn", "bai": 1}, {"stt": 12, "han": "不客气", "pinyin": "bú kèqi", "nghia": "không có chi", "bai": 1}, {"stt": 13, "han": "您", "pinyin": "nín", "nghia": "ngài (kính ngữ của \"bạn\")", "bai": 1}, {"stt": 14, "han": "留学生", "pinyin": "liúxuéshēng", "nghia": "lưu học sinh", "bai": 1}, {"stt": 15, "han": "叫", "pinyin": "jiào", "nghia": "gọi là, tên là", "bai": 1}, {"stt": 16, "han": "什么", "pinyin": "shénme", "nghia": "gì, cái gì", "bai": 1}, {"stt": 17, "han": "名字", "pinyin": "míngzi", "nghia": "tên", "bai": 1}, {"stt": 18, "han": "同学", "pinyin": "tóngxué", "nghia": "bạn học", "bai": 2}, {"stt": 19, "han": "们", "pinyin": "men", "nghia": "(hậu tố số nhiều)", "bai": 2}, {"stt": 20, "han": "来", "pinyin": "lái", "nghia": "đến", "bai": 2}, {"stt": 21, "han": "介绍", "pinyin": "jièshào", "nghia": "giới thiệu", "bai": 2}, {"stt": 22, "han": "一下儿", "pinyin": "yíxiàr", "nghia": "một chút (chỉ động tác ngắn)", "bai": 2}, {"stt": 23, "han": "姓", "pinyin": "xìng", "nghia": "họ, mang họ", "bai": 2}, {"stt": 24, "han": "的", "pinyin": "de", "nghia": "(trợ từ sở hữu)", "bai": 2}, {"stt": 25, "han": "哪", "pinyin": "nǎ", "nghia": "nào", "bai": 2}, {"stt": 26, "han": "国", "pinyin": "guó", "nghia": "nước, quốc gia", "bai": 2}, {"stt": 27, "han": "人", "pinyin": "rén", "nghia": "người", "bai": 2}, {"stt": 28, "han": "他", "pinyin": "tā", "nghia": "anh ấy", "bai": 2}, {"stt": 29, "han": "认识", "pinyin": "rènshi", "nghia": "quen biết", "bai": 2}, {"stt": 30, "han": "很", "pinyin": "hěn", "nghia": "rất", "bai": 2}, {"stt": 31, "han": "高兴", "pinyin": "gāoxìng", "nghia": "vui, cao hứng", "bai": 2}, {"stt": 32, "han": "也", "pinyin": "yě", "nghia": "cũng", "bai": 2}, {"stt": 33, "han": "呢", "pinyin": "ne", "nghia": "(trợ từ hỏi tỉnh lược)", "bai": 2}, {"stt": 34, "han": "那", "pinyin": "nà", "nghia": "kia, đó", "bai": 3}, {"stt": 35, "han": "谁", "pinyin": "shéi", "nghia": "ai", "bai": 3}, {"stt": 36, "han": "书", "pinyin": "shū", "nghia": "sách", "bai": 3}, {"stt": 37, "han": "同屋", "pinyin": "tóngwū", "nghia": "bạn cùng phòng", "bai": 3}, {"stt": 38, "han": "汉语", "pinyin": "Hànyǔ", "nghia": "tiếng Trung", "bai": 3}, {"stt": 39, "han": "课本", "pinyin": "kèběn", "nghia": "sách giáo khoa", "bai": 3}, {"stt": 40, "han": "词典", "pinyin": "cídiǎn", "nghia": "từ điển", "bai": 3}, {"stt": 41, "han": "就是", "pinyin": "jiùshì", "nghia": "chính là", "bai": 3}, {"stt": 42, "han": "日语", "pinyin": "Rìyǔ", "nghia": "tiếng Nhật", "bai": 3}, {"stt": 43, "han": "这", "pinyin": "zhè", "nghia": "này", "bai": 3}, {"stt": 44, "han": "杂志", "pinyin": "zázhì", "nghia": "tạp chí", "bai": 3}, {"stt": 45, "han": "音乐", "pinyin": "yīnyuè", "nghia": "âm nhạc", "bai": 3}, {"stt": 46, "han": "朋友", "pinyin": "péngyou", "nghia": "bạn bè", "bai": 3}, {"stt": 47, "han": "请问", "pinyin": "qǐngwèn", "nghia": "xin hỏi", "bai": 4}, {"stt": 48, "han": "图书馆", "pinyin": "túshūguǎn", "nghia": "thư viện", "bai": 4}, {"stt": 49, "han": "在", "pinyin": "zài", "nghia": "ở, tại", "bai": 4}, {"stt": 50, "han": "哪儿", "pinyin": "nǎr", "nghia": "ở đâu", "bai": 4}, {"stt": 51, "han": "对不起", "pinyin": "duìbuqǐ", "nghia": "xin lỗi", "bai": 4}, {"stt": 52, "han": "个", "pinyin": "gè", "nghia": "(lượng từ)", "bai": 4}, {"stt": 53, "han": "学校", "pinyin": "xuéxiào", "nghia": "trường học", "bai": 4}, {"stt": 54, "han": "知道", "pinyin": "zhīdào", "nghia": "biết", "bai": 4}, {"stt": 55, "han": "没关系", "pinyin": "méi guānxi", "nghia": "không sao", "bai": 4}, {"stt": 56, "han": "这儿", "pinyin": "zhèr", "nghia": "ở đây", "bai": 4}, {"stt": 57, "han": "教学楼", "pinyin": "jiàoxuélóu", "nghia": "tòa nhà giảng dạy", "bai": 4}, {"stt": 58, "han": "楼", "pinyin": "lóu", "nghia": "tòa nhà, lầu", "bai": 4}, {"stt": 59, "han": "那儿", "pinyin": "nàr", "nghia": "ở đó", "bai": 4}, {"stt": 60, "han": "宿舍", "pinyin": "sùshè", "nghia": "ký túc xá", "bai": 4}, {"stt": 61, "han": "北边", "pinyin": "běibian", "nghia": "phía bắc", "bai": 4}, {"stt": 62, "han": "左边", "pinyin": "zuǒbian", "nghia": "bên trái", "bai": 4}, {"stt": 63, "han": "右边", "pinyin": "yòubian", "nghia": "bên phải", "bai": 4}, {"stt": 64, "han": "不用谢", "pinyin": "búyòng xiè", "nghia": "không cần cảm ơn", "bai": 4}, {"stt": 65, "han": "不用", "pinyin": "búyòng", "nghia": "không cần", "bai": 4}, {"stt": 66, "han": "专业", "pinyin": "zhuānyè", "nghia": "chuyên ngành", "bai": 5}, {"stt": 67, "han": "国际", "pinyin": "guójì", "nghia": "quốc tế", "bai": 5}, {"stt": 68, "han": "关系", "pinyin": "guānxi", "nghia": "quan hệ", "bai": 5}, {"stt": 69, "han": "中文", "pinyin": "Zhōngwén", "nghia": "tiếng Trung", "bai": 5}, {"stt": 70, "han": "系", "pinyin": "xì", "nghia": "khoa (trong trường ĐH)", "bai": 5}, {"stt": 71, "han": "研究生", "pinyin": "yánjiūshēng", "nghia": "nghiên cứu sinh", "bai": 5}, {"stt": 72, "han": "现代", "pinyin": "xiàndài", "nghia": "hiện đại", "bai": 5}, {"stt": 73, "han": "文学", "pinyin": "wénxué", "nghia": "văn học", "bai": 5}, {"stt": 74, "han": "东边", "pinyin": "dōngbian", "nghia": "phía đông", "bai": 5}, {"stt": 75, "han": "有", "pinyin": "yǒu", "nghia": "có", "bai": 5}, {"stt": 76, "han": "空儿", "pinyin": "kòngr", "nghia": "thời gian rảnh", "bai": 5}, {"stt": 77, "han": "时候", "pinyin": "shíhou", "nghia": "lúc, khi", "bai": 5}, {"stt": 78, "han": "欢迎", "pinyin": "huānyíng", "nghia": "chào mừng", "bai": 5}, {"stt": 79, "han": "去", "pinyin": "qù", "nghia": "đi", "bai": 5}, {"stt": 80, "han": "玩儿", "pinyin": "wánr", "nghia": "chơi", "bai": 5}, {"stt": 81, "han": "卫生间", "pinyin": "wèishēngjiān", "nghia": "nhà vệ sinh", "bai": 5}, {"stt": 82, "han": "教室", "pinyin": "jiàoshì", "nghia": "phòng học", "bai": 5}, {"stt": 83, "han": "旁边", "pinyin": "pángbiān", "nghia": "bên cạnh", "bai": 5}, {"stt": 84, "han": "西边", "pinyin": "xībian", "nghia": "phía tây", "bai": 5}, {"stt": 85, "han": "对", "pinyin": "duì", "nghia": "đúng", "bai": 5}, {"stt": 86, "han": "大学", "pinyin": "dàxué", "nghia": "đại học", "bai": 6}, {"stt": 87, "han": "早上", "pinyin": "zǎoshang", "nghia": "buổi sáng", "bai": 6}, {"stt": 88, "han": "几", "pinyin": "jǐ", "nghia": "mấy", "bai": 6}, {"stt": 89, "han": "点", "pinyin": "diǎn", "nghia": "giờ (đồng hồ)", "bai": 6}, {"stt": 90, "han": "上课", "pinyin": "shàngkè", "nghia": "vào học, học tiết", "bai": 6}, {"stt": 91, "han": "大部分", "pinyin": "dà bùfen", "nghia": "phần lớn", "bai": 6}, {"stt": 92, "han": "部分", "pinyin": "bùfen", "nghia": "phần", "bai": 6}, {"stt": 93, "han": "九", "pinyin": "jiǔ", "nghia": "chín", "bai": 6}, {"stt": 94, "han": "我们", "pinyin": "wǒmen", "nghia": "chúng tôi", "bai": 6}, {"stt": 95, "han": "八", "pinyin": "bā", "nghia": "tám", "bai": 6}, {"stt": 96, "han": "五十", "pinyin": "wǔshí", "nghia": "năm mươi", "bai": 6}, {"stt": 97, "han": "分", "pinyin": "fēn", "nghia": "phút", "bai": 6}, {"stt": 98, "han": "下课", "pinyin": "xiàkè", "nghia": "tan học", "bai": 6}, {"stt": 99, "han": "十", "pinyin": "shí", "nghia": "mười", "bai": 6}, {"stt": 100, "han": "半", "pinyin": "bàn", "nghia": "rưỡi, nửa", "bai": 6}, {"stt": 101, "han": "太……了", "pinyin": "tài…le", "nghia": "quá…", "bai": 6}, {"stt": 102, "han": "早", "pinyin": "zǎo", "nghia": "sớm", "bai": 6}, {"stt": 103, "han": "讲座", "pinyin": "jiǎngzuò", "nghia": "buổi thuyết trình", "bai": 6}, {"stt": 104, "han": "开始", "pinyin": "kāishǐ", "nghia": "bắt đầu", "bai": 6}, {"stt": 105, "han": "六", "pinyin": "liù", "nghia": "sáu", "bai": 6}, {"stt": 106, "han": "现在", "pinyin": "xiànzài", "nghia": "bây giờ", "bai": 6}, {"stt": 107, "han": "差", "pinyin": "chà", "nghia": "thiếu, kém", "bai": 6}, {"stt": 108, "han": "一", "pinyin": "yī", "nghia": "một", "bai": 6}, {"stt": 109, "han": "刻", "pinyin": "kè", "nghia": "15 phút (khắc)", "bai": 6}, {"stt": 110, "han": "一会儿", "pinyin": "yíhuìr", "nghia": "một lát", "bai": 6}, {"stt": 111, "han": "见", "pinyin": "jiàn", "nghia": "gặp", "bai": 6}, {"stt": 112, "han": "明天", "pinyin": "míngtiān", "nghia": "ngày mai", "bai": 7}, {"stt": 113, "han": "课", "pinyin": "kè", "nghia": "tiết học", "bai": 7}, {"stt": 114, "han": "上午", "pinyin": "shàngwǔ", "nghia": "buổi sáng (trước trưa)", "bai": 7}, {"stt": 115, "han": "下午", "pinyin": "xiàwǔ", "nghia": "buổi chiều", "bai": 7}, {"stt": 116, "han": "没（有）", "pinyin": "méi(yǒu)", "nghia": "không có", "bai": 7}, {"stt": 117, "han": "自行车", "pinyin": "zìxíngchē", "nghia": "xe đạp", "bai": 7}, {"stt": 118, "han": "吧", "pinyin": "ba", "nghia": "(trợ từ đề nghị)", "bai": 7}, {"stt": 119, "han": "事", "pinyin": "shì", "nghia": "việc", "bai": 7}, {"stt": 120, "han": "可是", "pinyin": "kěshì", "nghia": "nhưng", "bai": 7}, {"stt": 121, "han": "没问题", "pinyin": "méi wèntí", "nghia": "không vấn đề gì", "bai": 7}, {"stt": 122, "han": "钥匙", "pinyin": "yàoshi", "nghia": "chìa khóa", "bai": 7}, {"stt": 123, "han": "车", "pinyin": "chē", "nghia": "xe", "bai": 7}, {"stt": 124, "han": "下", "pinyin": "xià", "nghia": "dưới", "bai": 7}, {"stt": 125, "han": "车棚", "pinyin": "chēpéng", "nghia": "nhà để xe", "bai": 7}, {"stt": 126, "han": "里", "pinyin": "li", "nghia": "bên trong", "bai": 7}, {"stt": 127, "han": "后边", "pinyin": "hòubian", "nghia": "phía sau", "bai": 7}, {"stt": 128, "han": "今天", "pinyin": "jīntiān", "nghia": "hôm nay", "bai": 7}, {"stt": 129, "han": "晚上", "pinyin": "wǎnshang", "nghia": "buổi tối", "bai": 7}, {"stt": 130, "han": "时间", "pinyin": "shíjiān", "nghia": "thời gian", "bai": 7}, {"stt": 131, "han": "电影院", "pinyin": "diànyǐngyuàn", "nghia": "rạp chiếu phim", "bai": 7}, {"stt": 132, "han": "电影", "pinyin": "diànyǐng", "nghia": "phim", "bai": 7}, {"stt": 133, "han": "听说", "pinyin": "tīngshuō", "nghia": "nghe nói", "bai": 7}, {"stt": 134, "han": "有名", "pinyin": "yǒumíng", "nghia": "nổi tiếng", "bai": 7}, {"stt": 135, "han": "当然", "pinyin": "dāngrán", "nghia": "đương nhiên", "bai": 7}, {"stt": 136, "han": "周末", "pinyin": "zhōumò", "nghia": "cuối tuần", "bai": 8}, {"stt": 137, "han": "啊", "pinyin": "a", "nghia": "(trợ từ cảm thán)", "bai": 8}, {"stt": 138, "han": "不过", "pinyin": "búguò", "nghia": "nhưng, tuy nhiên", "bai": 8}, {"stt": 139, "han": "怎么", "pinyin": "zěnme", "nghia": "thế nào", "bai": 8}, {"stt": 140, "han": "走", "pinyin": "zǒu", "nghia": "đi bộ", "bai": 8}, {"stt": 141, "han": "路", "pinyin": "lù", "nghia": "đường", "bai": 8}, {"stt": 142, "han": "和", "pinyin": "hé", "nghia": "và", "bai": 8}, {"stt": 143, "han": "公共汽车", "pinyin": "gōnggòng qìchē", "nghia": "xe buýt", "bai": 8}, {"stt": 144, "han": "都", "pinyin": "dōu", "nghia": "đều", "bai": 8}, {"stt": 145, "han": "到", "pinyin": "dào", "nghia": "đến (nơi)", "bai": 8}, {"stt": 146, "han": "骑", "pinyin": "qí", "nghia": "cưỡi, đi (xe đạp)", "bai": 8}, {"stt": 147, "han": "快", "pinyin": "kuài", "nghia": "nhanh", "bai": 8}, {"stt": 148, "han": "分钟", "pinyin": "fēnzhōng", "nghia": "phút", "bai": 8}, {"stt": 149, "han": "就", "pinyin": "jiù", "nghia": "thì, liền (ngay)", "bai": 8}, {"stt": 150, "han": "校园", "pinyin": "xiàoyuán", "nghia": "khuôn viên trường", "bai": 8}, {"stt": 151, "han": "东南", "pinyin": "dōngnán", "nghia": "đông nam", "bai": 8}, {"stt": 152, "han": "东", "pinyin": "dōng", "nghia": "đông", "bai": 8}, {"stt": 153, "han": "号", "pinyin": "hào", "nghia": "số", "bai": 8}, {"stt": 154, "han": "房间", "pinyin": "fángjiān", "nghia": "phòng", "bai": 8}, {"stt": 155, "han": "多少", "pinyin": "duōshao", "nghia": "bao nhiêu", "bai": 8}, {"stt": 156, "han": "室", "pinyin": "shì", "nghia": "phòng", "bai": 8}, {"stt": 157, "han": "电话", "pinyin": "diànhuà", "nghia": "điện thoại", "bai": 8}, {"stt": 158, "han": "号码", "pinyin": "hàomǎ", "nghia": "số hiệu", "bai": 8}, {"stt": 159, "han": "手机", "pinyin": "shǒujī", "nghia": "điện thoại di động", "bai": 8}, {"stt": 160, "han": "等", "pinyin": "děng", "nghia": "đợi", "bai": 8}, {"stt": 161, "han": "师傅", "pinyin": "shīfu", "nghia": "thợ, chú/bác (xưng hô)", "bai": 9}, {"stt": 162, "han": "买", "pinyin": "mǎi", "nghia": "mua", "bai": 9}, {"stt": 163, "han": "啤酒", "pinyin": "píjiǔ", "nghia": "bia", "bai": 9}, {"stt": 164, "han": "售货员", "pinyin": "shòuhuòyuán", "nghia": "nhân viên bán hàng", "bai": 9}, {"stt": 165, "han": "瓶", "pinyin": "píng", "nghia": "chai", "bai": 9}, {"stt": 166, "han": "钱", "pinyin": "qián", "nghia": "tiền", "bai": 9}, {"stt": 167, "han": "块", "pinyin": "kuài", "nghia": "đồng (tệ)", "bai": 9}, {"stt": 168, "han": "两", "pinyin": "liǎng", "nghia": "hai (khi đi với lượng từ)", "bai": 9}, {"stt": 169, "han": "再", "pinyin": "zài", "nghia": "lại, nữa", "bai": 9}, {"stt": 170, "han": "水", "pinyin": "shuǐ", "nghia": "nước", "bai": 9}, {"stt": 171, "han": "一共", "pinyin": "yígòng", "nghia": "tổng cộng", "bai": 9}, {"stt": 172, "han": "毛", "pinyin": "máo", "nghia": "hào (1/10 tệ)", "bai": 9}, {"stt": 173, "han": "给", "pinyin": "gěi", "nghia": "đưa, cho", "bai": 9}, {"stt": 174, "han": "小姐", "pinyin": "xiǎojie", "nghia": "cô (xưng hô)", "bai": 9}, {"stt": 175, "han": "看", "pinyin": "kàn", "nghia": "xem", "bai": 9}, {"stt": 176, "han": "这些", "pinyin": "zhèxiē", "nghia": "những cái này", "bai": 9}, {"stt": 177, "han": "要", "pinyin": "yào", "nghia": "muốn", "bai": 9}, {"stt": 178, "han": "本", "pinyin": "běn", "nghia": "quyển (lượng từ)", "bai": 9}, {"stt": 179, "han": "小", "pinyin": "xiǎo", "nghia": "nhỏ", "bai": 9}, {"stt": 180, "han": "零钱", "pinyin": "língqián", "nghia": "tiền lẻ", "bai": 9}, {"stt": 181, "han": "照片", "pinyin": "zhàopiàn", "nghia": "ảnh chụp", "bai": 10}, {"stt": 182, "han": "家", "pinyin": "jiā", "nghia": "nhà, gia đình", "bai": 10}, {"stt": 183, "han": "口", "pinyin": "kǒu", "nghia": "(lượng từ đếm người trong nhà)", "bai": 10}, {"stt": 184, "han": "爷爷", "pinyin": "yéye", "nghia": "ông nội", "bai": 10}, {"stt": 185, "han": "奶奶", "pinyin": "nǎinai", "nghia": "bà nội", "bai": 10}, {"stt": 186, "han": "爸爸", "pinyin": "bàba", "nghia": "bố", "bai": 10}, {"stt": 187, "han": "妈妈", "pinyin": "māma", "nghia": "mẹ", "bai": 10}, {"stt": 188, "han": "哥哥", "pinyin": "gēge", "nghia": "anh trai", "bai": 10}, {"stt": 189, "han": "姐姐", "pinyin": "jiějie", "nghia": "chị gái", "bai": 10}, {"stt": 190, "han": "家庭", "pinyin": "jiātíng", "nghia": "gia đình", "bai": 10}, {"stt": 191, "han": "一般", "pinyin": "yìbān", "nghia": "thông thường", "bai": 10}, {"stt": 192, "han": "只", "pinyin": "zhǐ", "nghia": "chỉ", "bai": 10}, {"stt": 193, "han": "孩子", "pinyin": "háizi", "nghia": "con cái, trẻ em", "bai": 10}, {"stt": 194, "han": "弟弟", "pinyin": "dìdi", "nghia": "em trai", "bai": 10}, {"stt": 195, "han": "妹妹", "pinyin": "mèimei", "nghia": "em gái", "bai": 10}, {"stt": 196, "han": "还", "pinyin": "hái", "nghia": "vẫn, còn", "bai": 10}, {"stt": 197, "han": "条", "pinyin": "tiáo", "nghia": "(lượng từ, dùng cho chó)", "bai": 10}, {"stt": 198, "han": "狗", "pinyin": "gǒu", "nghia": "chó", "bai": 10}, {"stt": 199, "han": "这样", "pinyin": "zhèyàng", "nghia": "như thế này", "bai": 10}, {"stt": 200, "han": "天气", "pinyin": "tiānqì", "nghia": "thời tiết", "bai": 11}, {"stt": 201, "han": "怎么样", "pinyin": "zěnmeyàng", "nghia": "thế nào", "bai": 11}, {"stt": 202, "han": "不太", "pinyin": "bú tài", "nghia": "không quá", "bai": 11}, {"stt": 203, "han": "风", "pinyin": "fēng", "nghia": "gió", "bai": 11}, {"stt": 204, "han": "雨", "pinyin": "yǔ", "nghia": "mưa", "bai": 11}, {"stt": 205, "han": "冷", "pinyin": "lěng", "nghia": "lạnh", "bai": 11}, {"stt": 206, "han": "度", "pinyin": "dù", "nghia": "độ (nhiệt độ)", "bai": 11}, {"stt": 207, "han": "晴天", "pinyin": "qíngtiān", "nghia": "trời nắng, trời quang", "bai": 11}, {"stt": 208, "han": "秋天", "pinyin": "qiūtiān", "nghia": "mùa thu", "bai": 11}, {"stt": 209, "han": "热", "pinyin": "rè", "nghia": "nóng", "bai": 11}, {"stt": 210, "han": "舒服", "pinyin": "shūfu", "nghia": "thoải mái, dễ chịu", "bai": 11}, {"stt": 211, "han": "最", "pinyin": "zuì", "nghia": "nhất", "bai": 11}, {"stt": 212, "han": "季节", "pinyin": "jìjié", "nghia": "mùa", "bai": 11}, {"stt": 213, "han": "冬天", "pinyin": "dōngtiān", "nghia": "mùa đông", "bai": 11}, {"stt": 214, "han": "比较", "pinyin": "bǐjiào", "nghia": "khá, tương đối", "bai": 11}, {"stt": 215, "han": "差不多", "pinyin": "chàbuduō", "nghia": "gần như, xấp xỉ", "bai": 11}, {"stt": 216, "han": "零下", "pinyin": "língxià", "nghia": "dưới 0 độ", "bai": 11}, {"stt": 217, "han": "常常", "pinyin": "chángcháng", "nghia": "thường xuyên", "bai": 11}, {"stt": 218, "han": "下（雪）", "pinyin": "xià", "nghia": "rơi, đổ (mưa/tuyết)", "bai": 11}, {"stt": 219, "han": "雪", "pinyin": "xuě", "nghia": "tuyết", "bai": 11}, {"stt": 220, "han": "常", "pinyin": "cháng", "nghia": "thường", "bai": 11}, {"stt": 221, "han": "喜欢", "pinyin": "xǐhuan", "nghia": "thích", "bai": 11}, {"stt": 222, "han": "夏天", "pinyin": "xiàtiān", "nghia": "mùa hè", "bai": 11}, {"stt": 223, "han": "游泳", "pinyin": "yóuyǒng", "nghia": "bơi lội", "bai": 11}, {"stt": 224, "han": "春天", "pinyin": "chūntiān", "nghia": "mùa xuân", "bai": 11}, {"stt": 225, "han": "喂", "pinyin": "wèi", "nghia": "alô", "bai": 12}, {"stt": 226, "han": "啊", "pinyin": "à", "nghia": "à (thán từ)", "bai": 12}, {"stt": 227, "han": "在（正在）", "pinyin": "zài", "nghia": "đang", "bai": 12}, {"stt": 228, "han": "干", "pinyin": "gàn", "nghia": "làm", "bai": 12}, {"stt": 229, "han": "做", "pinyin": "zuò", "nghia": "làm", "bai": 12}, {"stt": 230, "han": "作业", "pinyin": "zuòyè", "nghia": "bài tập", "bai": 12}, {"stt": 231, "han": "每", "pinyin": "měi", "nghia": "mỗi", "bai": 12}, {"stt": 232, "han": "天", "pinyin": "tiān", "nghia": "ngày", "bai": 12}, {"stt": 233, "han": "多", "pinyin": "duō", "nghia": "nhiều", "bai": 12}, {"stt": 234, "han": "星期三", "pinyin": "xīngqīsān", "nghia": "thứ Tư", "bai": 12}, {"stt": 235, "han": "从……到……", "pinyin": "cóng…dào…", "nghia": "từ… đến…", "bai": 12}, {"stt": 236, "han": "中午", "pinyin": "zhōngwǔ", "nghia": "buổi trưa", "bai": 12}, {"stt": 237, "han": "节", "pinyin": "jié", "nghia": "tiết (lượng từ)", "bai": 12}, {"stt": 238, "han": "听写", "pinyin": "tīngxiě", "nghia": "bài chính tả", "bai": 12}, {"stt": 239, "han": "所以", "pinyin": "suǒyǐ", "nghia": "vì vậy", "bai": 12}, {"stt": 240, "han": "酒吧", "pinyin": "jiǔbā", "nghia": "quán bar", "bai": 12}, {"stt": 241, "han": "喝", "pinyin": "hē", "nghia": "uống", "bai": 12}, {"stt": 242, "han": "咖啡", "pinyin": "kāfēi", "nghia": "cà phê", "bai": 12}, {"stt": 243, "han": "书店", "pinyin": "shūdiàn", "nghia": "hiệu sách", "bai": 12}, {"stt": 244, "han": "对面", "pinyin": "duìmiàn", "nghia": "đối diện", "bai": 12}, {"stt": 245, "han": "自己", "pinyin": "zìjǐ", "nghia": "tự mình", "bai": 12}, {"stt": 246, "han": "正在", "pinyin": "zhèngzài", "nghia": "đang", "bai": 12}, {"stt": 247, "han": "唱", "pinyin": "chàng", "nghia": "hát", "bai": 12}, {"stt": 248, "han": "歌", "pinyin": "gē", "nghia": "bài hát", "bai": 12}, {"stt": 249, "han": "回", "pinyin": "huí", "nghia": "về, quay lại", "bai": 12}, {"stt": 250, "han": "借", "pinyin": "jiè", "nghia": "mượn", "bai": 13}, {"stt": 251, "han": "先", "pinyin": "xiān", "nghia": "trước tiên", "bai": 13}, {"stt": 252, "han": "银行", "pinyin": "yínháng", "nghia": "ngân hàng", "bai": 13}, {"stt": 253, "han": "换", "pinyin": "huàn", "nghia": "đổi", "bai": 13}, {"stt": 254, "han": "然后", "pinyin": "ránhòu", "nghia": "sau đó", "bai": 13}, {"stt": 255, "han": "商店", "pinyin": "shāngdiàn", "nghia": "cửa hàng", "bai": 13}, {"stt": 256, "han": "东西", "pinyin": "dōngxi", "nghia": "đồ vật", "bai": 13}, {"stt": 257, "han": "咱们", "pinyin": "zánmen", "nghia": "chúng ta", "bai": 13}, {"stt": 258, "han": "一起", "pinyin": "yìqǐ", "nghia": "cùng nhau", "bai": 13}, {"stt": 259, "han": "关门", "pinyin": "guānmén", "nghia": "đóng cửa", "bai": 13}, {"stt": 260, "han": "关", "pinyin": "guān", "nghia": "đóng", "bai": 13}, {"stt": 261, "han": "星期天", "pinyin": "xīngqītiān", "nghia": "Chủ nhật", "bai": 13}, {"stt": 262, "han": "打算", "pinyin": "dǎsuàn", "nghia": "dự định", "bai": 13}, {"stt": 263, "han": "购物中心", "pinyin": "gòuwù zhōngxīn", "nghia": "trung tâm mua sắm", "bai": 13}, {"stt": 264, "han": "贵", "pinyin": "guì", "nghia": "đắt", "bai": 13}, {"stt": 265, "han": "还可以", "pinyin": "hái kěyǐ", "nghia": "tạm được", "bai": 13}, {"stt": 266, "han": "质量", "pinyin": "zhìliàng", "nghia": "chất lượng", "bai": 13}, {"stt": 267, "han": "不错", "pinyin": "búcuò", "nghia": "khá tốt, không tệ", "bai": 13}, {"stt": 268, "han": "正", "pinyin": "zhèng", "nghia": "đang, vừa", "bai": 13}, {"stt": 269, "han": "衣服", "pinyin": "yīfu", "nghia": "quần áo", "bai": 13}, {"stt": 270, "han": "开门", "pinyin": "kāimén", "nghia": "mở cửa", "bai": 13}, {"stt": 271, "han": "开", "pinyin": "kāi", "nghia": "mở", "bai": 13}, {"stt": 272, "han": "件", "pinyin": "jiàn", "nghia": "chiếc, cái (lượng từ áo)", "bai": 14}, {"stt": 273, "han": "白", "pinyin": "bái", "nghia": "trắng", "bai": 14}, {"stt": 274, "han": "毛衣", "pinyin": "máoyī", "nghia": "áo len", "bai": 14}, {"stt": 275, "han": "挺", "pinyin": "tǐng", "nghia": "khá", "bai": 14}, {"stt": 276, "han": "好看", "pinyin": "hǎokàn", "nghia": "đẹp, dễ nhìn", "bai": 14}, {"stt": 277, "han": "容易", "pinyin": "róngyì", "nghia": "dễ", "bai": 14}, {"stt": 278, "han": "脏", "pinyin": "zāng", "nghia": "bẩn", "bai": 14}, {"stt": 279, "han": "蓝", "pinyin": "lán", "nghia": "xanh dương", "bai": 14}, {"stt": 280, "han": "颜色", "pinyin": "yánsè", "nghia": "màu sắc", "bai": 14}, {"stt": 281, "han": "有点儿", "pinyin": "yǒudiǎnr", "nghia": "hơi, có chút", "bai": 14}, {"stt": 282, "han": "深", "pinyin": "shēn", "nghia": "đậm", "bai": 14}, {"stt": 283, "han": "浅", "pinyin": "qiǎn", "nghia": "nhạt", "bai": 14}, {"stt": 284, "han": "黄", "pinyin": "huáng", "nghia": "vàng", "bai": 14}, {"stt": 285, "han": "漂亮", "pinyin": "piàoliang", "nghia": "đẹp", "bai": 14}, {"stt": 286, "han": "它", "pinyin": "tā", "nghia": "nó", "bai": 14}, {"stt": 287, "han": "昨天", "pinyin": "zuótiān", "nghia": "hôm qua", "bai": 14}, {"stt": 288, "han": "新", "pinyin": "xīn", "nghia": "mới", "bai": 14}, {"stt": 289, "han": "辆", "pinyin": "liàng", "nghia": "chiếc (lượng từ xe)", "bai": 14}, {"stt": 290, "han": "旧", "pinyin": "jiù", "nghia": "cũ", "bai": 14}, {"stt": 291, "han": "便宜", "pinyin": "piányi", "nghia": "rẻ", "bai": 14}, {"stt": 292, "han": "丢", "pinyin": "diū", "nghia": "mất, thất lạc", "bai": 14}, {"stt": 293, "han": "别的", "pinyin": "bié de", "nghia": "cái khác", "bai": 14}, {"stt": 294, "han": "黑", "pinyin": "hēi", "nghia": "đen", "bai": 14}, {"stt": 295, "han": "灰", "pinyin": "huī", "nghia": "xám", "bai": 14}, {"stt": 296, "han": "绿", "pinyin": "lǜ", "nghia": "xanh lá", "bai": 14}, {"stt": 297, "han": "晚饭", "pinyin": "wǎnfàn", "nghia": "bữa tối", "bai": 15}, {"stt": 298, "han": "以后", "pinyin": "yǐhòu", "nghia": "sau này, sau đó", "bai": 15}, {"stt": 299, "han": "一直", "pinyin": "yìzhí", "nghia": "luôn, liên tục", "bai": 15}, {"stt": 300, "han": "忙", "pinyin": "máng", "nghia": "bận", "bai": 15}, {"stt": 301, "han": "准备", "pinyin": "zhǔnbèi", "nghia": "chuẩn bị", "bai": 15}, {"stt": 302, "han": "礼物", "pinyin": "lǐwù", "nghia": "quà tặng", "bai": 15}, {"stt": 303, "han": "生日", "pinyin": "shēngrì", "nghia": "sinh nhật", "bai": 15}, {"stt": 304, "han": "男", "pinyin": "nán", "nghia": "nam", "bai": 15}, {"stt": 305, "han": "还是", "pinyin": "háishi", "nghia": "hay là", "bai": 15}, {"stt": 306, "han": "女", "pinyin": "nǚ", "nghia": "nữ", "bai": 15}, {"stt": 307, "han": "可", "pinyin": "kě", "nghia": "có thể, đáng", "bai": 15}, {"stt": 308, "han": "比如", "pinyin": "bǐrú", "nghia": "ví dụ như", "bai": 15}, {"stt": 309, "han": "巧克力", "pinyin": "qiǎokèlì", "nghia": "sô-cô-la", "bai": 15}, {"stt": 310, "han": "甜", "pinyin": "tián", "nghia": "ngọt", "bai": 15}, {"stt": 311, "han": "号（cỡ）", "pinyin": "hào", "nghia": "cỡ, số (size)", "bai": 15}, {"stt": 312, "han": "那么", "pinyin": "nàme", "nghia": "vậy thì", "bai": 15}, {"stt": 313, "han": "束", "pinyin": "shù", "nghia": "bó (lượng từ hoa)", "bai": 15}, {"stt": 314, "han": "花", "pinyin": "huā", "nghia": "hoa", "bai": 15}, {"stt": 315, "han": "主意", "pinyin": "zhǔyi", "nghia": "ý kiến", "bai": 15}, {"stt": 316, "han": "又", "pinyin": "yòu", "nghia": "lại", "bai": 16}, {"stt": 317, "han": "了", "pinyin": "le", "nghia": "(trợ từ)", "bai": 16}, {"stt": 318, "han": "看起来", "pinyin": "kàn qǐlái", "nghia": "trông có vẻ", "bai": 16}, {"stt": 319, "han": "啦", "pinyin": "la", "nghia": "(trợ từ ngữ khí)", "bai": 16}, {"stt": 320, "han": "可以", "pinyin": "kěyǐ", "nghia": "có thể", "bai": 16}, {"stt": 321, "han": "好好儿", "pinyin": "hǎohāor", "nghia": "thật kỹ, đàng hoàng", "bai": 16}, {"stt": 322, "han": "觉得", "pinyin": "juéde", "nghia": "cảm thấy", "bai": 16}, {"stt": 323, "han": "没意思", "pinyin": "méi yìsi", "nghia": "chán, vô vị", "bai": 16}, {"stt": 324, "han": "电视", "pinyin": "diànshì", "nghia": "ti vi", "bai": 16}, {"stt": 325, "han": "洗", "pinyin": "xǐ", "nghia": "rửa, giặt", "bai": 16}, {"stt": 326, "han": "睡懒觉", "pinyin": "shuì lǎnjiào", "nghia": "ngủ nướng", "bai": 16}, {"stt": 327, "han": "睡觉", "pinyin": "shuìjiào", "nghia": "ngủ", "bai": 16}, {"stt": 328, "han": "出去", "pinyin": "chūqu", "nghia": "đi ra ngoài", "bai": 16}, {"stt": 329, "han": "逛", "pinyin": "guàng", "nghia": "dạo, đi chơi", "bai": 16}, {"stt": 330, "han": "学习", "pinyin": "xuéxí", "nghia": "học tập", "bai": 16}, {"stt": 331, "han": "不同", "pinyin": "bù tóng", "nghia": "khác nhau", "bai": 16}, {"stt": 332, "han": "安排", "pinyin": "ānpái", "nghia": "sắp xếp", "bai": 16}, {"stt": 333, "han": "上（周末）", "pinyin": "shàng", "nghia": "tuần trước, lần trước", "bai": 16}, {"stt": 334, "han": "包", "pinyin": "bāo", "nghia": "gói, gói (sủi cảo)", "bai": 16}, {"stt": 335, "han": "饺子", "pinyin": "jiǎozi", "nghia": "sủi cảo", "bai": 16}, {"stt": 336, "han": "迪厅", "pinyin": "dítīng", "nghia": "vũ trường", "bai": 16}, {"stt": 337, "han": "跳舞", "pinyin": "tiàowǔ", "nghia": "nhảy múa", "bai": 16}, {"stt": 338, "han": "听", "pinyin": "tīng", "nghia": "nghe", "bai": 16}, {"stt": 339, "han": "音乐会", "pinyin": "yīnyuèhuì", "nghia": "buổi hòa nhạc", "bai": 16}, {"stt": 340, "han": "做客", "pinyin": "zuòkè", "nghia": "làm khách", "bai": 17}, {"stt": 341, "han": "请进", "pinyin": "qǐng jìn", "nghia": "mời vào", "bai": 17}, {"stt": 342, "han": "真", "pinyin": "zhēn", "nghia": "thật là", "bai": 17}, {"stt": 343, "han": "干净", "pinyin": "gānjìng", "nghia": "sạch sẽ", "bai": 17}, {"stt": 344, "han": "坐", "pinyin": "zuò", "nghia": "ngồi", "bai": 17}, {"stt": 345, "han": "哎呀", "pinyin": "āiyā", "nghia": "ôi (thán từ)", "bai": 17}, {"stt": 346, "han": "客气", "pinyin": "kèqi", "nghia": "khách sáo", "bai": 17}, {"stt": 347, "han": "一点儿", "pinyin": "yìdiǎnr", "nghia": "một chút", "bai": 17}, {"stt": 348, "han": "心意", "pinyin": "xīnyì", "nghia": "tấm lòng", "bai": 17}, {"stt": 349, "han": "收下", "pinyin": "shōuxia", "nghia": "nhận lấy", "bai": 17}, {"stt": 350, "han": "茶", "pinyin": "chá", "nghia": "trà", "bai": 17}, {"stt": 351, "han": "果汁", "pinyin": "guǒzhī", "nghia": "nước ép trái cây", "bai": 17}, {"stt": 352, "han": "随便", "pinyin": "suíbiàn", "nghia": "tùy ý", "bai": 17}, {"stt": 353, "han": "行", "pinyin": "xíng", "nghia": "được, ổn", "bai": 17}, {"stt": 354, "han": "路上", "pinyin": "lùshang", "nghia": "trên đường", "bai": 17}, {"stt": 355, "han": "顺利", "pinyin": "shùnlì", "nghia": "thuận lợi", "bai": 17}, {"stt": 356, "han": "上（车）", "pinyin": "shàng", "nghia": "trên (xe)", "bai": 17}, {"stt": 357, "han": "挤", "pinyin": "jǐ", "nghia": "chật, đông", "bai": 17}, {"stt": 358, "han": "打车", "pinyin": "dǎchē", "nghia": "bắt taxi", "bai": 17}, {"stt": 359, "han": "空调", "pinyin": "kōngtiáo", "nghia": "điều hòa", "bai": 17}, {"stt": 360, "han": "大巴", "pinyin": "dàbā", "nghia": "xe buýt lớn", "bai": 17}, {"stt": 361, "han": "地铁", "pinyin": "dìtiě", "nghia": "tàu điện ngầm", "bai": 17}, {"stt": 362, "han": "饿", "pinyin": "è", "nghia": "đói", "bai": 17}, {"stt": 363, "han": "吃", "pinyin": "chī", "nghia": "ăn", "bai": 17}, {"stt": 364, "han": "会（+V）", "pinyin": "huì", "nghia": "biết, có khả năng", "bai": 17}, {"stt": 365, "han": "试", "pinyin": "shì", "nghia": "thử", "bai": 17}, {"stt": 366, "han": "味道", "pinyin": "wèidao", "nghia": "mùi vị", "bai": 18}, {"stt": 367, "han": "超市", "pinyin": "chāoshì", "nghia": "siêu thị", "bai": 18}, {"stt": 368, "han": "北方人", "pinyin": "běifāngrén", "nghia": "người miền Bắc", "bai": 18}, {"stt": 369, "han": "面食", "pinyin": "miànshí", "nghia": "món ăn từ bột mì", "bai": 18}, {"stt": 370, "han": "热闹", "pinyin": "rènao", "nghia": "náo nhiệt", "bai": 18}, {"stt": 371, "han": "速冻饺子", "pinyin": "sùdòng jiǎozi", "nghia": "sủi cảo đông lạnh", "bai": 18}, {"stt": 372, "han": "重要", "pinyin": "zhòngyào", "nghia": "quan trọng", "bai": 18}, {"stt": 373, "han": "偷懒", "pinyin": "tōulǎn", "nghia": "lười biếng", "bai": 18}, {"stt": 374, "han": "过节", "pinyin": "guòjié", "nghia": "ăn Tết, ăn lễ", "bai": 18}, {"stt": 375, "han": "食品", "pinyin": "shípǐn", "nghia": "thực phẩm", "bai": 18}, {"stt": 376, "han": "吃米饭", "pinyin": "chī mǐfàn", "nghia": "ăn cơm", "bai": 18}, {"stt": 377, "han": "男的/女的", "pinyin": "nán de/nǚ de", "nghia": "người nam/nữ", "bai": 18}, {"stt": 378, "han": "好+V", "pinyin": "hǎo+V", "nghia": "dễ (làm gì đó)", "bai": 18}, {"stt": 379, "han": "得（děi）", "pinyin": "děi", "nghia": "phải (bắt buộc)", "bai": 18}, {"stt": 380, "han": "不是……吗", "pinyin": "bú shì…ma", "nghia": "chẳng phải…sao (phản vấn)", "bai": 18}, {"stt": 381, "han": "如果……的话，就……", "pinyin": "rúguǒ…dehuà, jiù…", "nghia": "nếu…thì…", "bai": 18}, {"stt": 382, "han": "多", "pinyin": "duō", "nghia": "bao nhiêu, thế nào", "bai": 19}, {"stt": 383, "han": "长", "pinyin": "cháng", "nghia": "dài, lâu", "bai": 19}, {"stt": 384, "han": "年", "pinyin": "nián", "nghia": "năm", "bai": 19}, {"stt": 385, "han": "习惯", "pinyin": "xíguàn", "nghia": "quen, thói quen", "bai": 19}, {"stt": 386, "han": "生活", "pinyin": "shēnghuó", "nghia": "cuộc sống", "bai": 19}, {"stt": 387, "han": "刚", "pinyin": "gāng", "nghia": "vừa mới", "bai": 19}, {"stt": 388, "han": "已经", "pinyin": "yǐjīng", "nghia": "đã, rồi", "bai": 19}, {"stt": 389, "han": "不好意思", "pinyin": "bù hǎoyìsi", "nghia": "ngại quá", "bai": 19}, {"stt": 390, "han": "才", "pinyin": "cái", "nghia": "mới (muộn)", "bai": 19}, {"stt": 391, "han": "起床", "pinyin": "qǐchuáng", "nghia": "thức dậy", "bai": 19}, {"stt": 392, "han": "床", "pinyin": "chuáng", "nghia": "giường", "bai": 19}, {"stt": 393, "han": "睡", "pinyin": "shuì", "nghia": "ngủ", "bai": 19}, {"stt": 394, "han": "夜里", "pinyin": "yèli", "nghia": "ban đêm", "bai": 19}, {"stt": 395, "han": "点钟", "pinyin": "diǎnzhōng", "nghia": "giờ", "bai": 19}, {"stt": 396, "han": "早睡早起", "pinyin": "zǎoshuì zǎoqǐ", "nghia": "ngủ sớm dậy sớm", "bai": 19}, {"stt": 397, "han": "工作", "pinyin": "gōngzuò", "nghia": "làm việc", "bai": 19}, {"stt": 398, "han": "毛病", "pinyin": "máobing", "nghia": "tật xấu", "bai": 19}, {"stt": 399, "han": "改", "pinyin": "gǎi", "nghia": "sửa", "bai": 19}, {"stt": 400, "han": "大", "pinyin": "dà", "nghia": "lớn (tuổi)", "bai": 19}, {"stt": 401, "han": "年纪", "pinyin": "niánjì", "nghia": "tuổi tác", "bai": 19}, {"stt": 402, "han": "大概", "pinyin": "dàgài", "nghia": "khoảng, chừng", "bai": 19}, {"stt": 403, "han": "岁", "pinyin": "suì", "nghia": "tuổi", "bai": 19}, {"stt": 404, "han": "看", "pinyin": "kàn", "nghia": "thăm", "bai": 20}, {"stt": 405, "han": "别客气", "pinyin": "bié kèqi", "nghia": "đừng khách sáo", "bai": 20}, {"stt": 406, "han": "别", "pinyin": "bié", "nghia": "đừng", "bai": 20}, {"stt": 407, "han": "无聊", "pinyin": "wúliáo", "nghia": "buồn chán", "bai": 20}, {"stt": 408, "han": "医院", "pinyin": "yīyuàn", "nghia": "bệnh viện", "bai": 20}, {"stt": 409, "han": "做梦", "pinyin": "zuòmèng", "nghia": "nằm mơ", "bai": 20}, {"stt": 410, "han": "幸福", "pinyin": "xìngfú", "nghia": "hạnh phúc", "bai": 20}, {"stt": 411, "han": "背", "pinyin": "bèi", "nghia": "học thuộc", "bai": 20}, {"stt": 412, "han": "生词", "pinyin": "shēngcí", "nghia": "từ mới", "bai": 20}, {"stt": 413, "han": "考试", "pinyin": "kǎoshì", "nghia": "kỳ thi", "bai": 20}, {"stt": 414, "han": "累", "pinyin": "lèi", "nghia": "mệt", "bai": 20}, {"stt": 415, "han": "死（sǐ le）", "pinyin": "sǐ", "nghia": "chết (…死了: cực kỳ)", "bai": 20}, {"stt": 416, "han": "住", "pinyin": "zhù", "nghia": "ở, nằm (viện)", "bai": 20}, {"stt": 417, "han": "问", "pinyin": "wèn", "nghia": "hỏi", "bai": 20}, {"stt": 418, "han": "医生", "pinyin": "yīshēng", "nghia": "bác sĩ", "bai": 20}, {"stt": 419, "han": "同意", "pinyin": "tóngyì", "nghia": "đồng ý", "bai": 20}, {"stt": 420, "han": "对了", "pinyin": "duì le", "nghia": "à đúng rồi", "bai": 20}, {"stt": 421, "han": "炒", "pinyin": "chǎo", "nghia": "xào", "bai": 20}, {"stt": 422, "han": "菜", "pinyin": "cài", "nghia": "món ăn", "bai": 20}, {"stt": 423, "han": "面条儿", "pinyin": "miàntiáor", "nghia": "mì sợi", "bai": 20}, {"stt": 424, "han": "病人", "pinyin": "bìngrén", "nghia": "bệnh nhân", "bai": 20}, {"stt": 425, "han": "身体", "pinyin": "shēntǐ", "nghia": "cơ thể, sức khỏe", "bai": 20}, {"stt": 426, "han": "药", "pinyin": "yào", "nghia": "thuốc", "bai": 20}];
+const GRAMMAR = [{"title": "1. Định ngữ (定语) — Bài 3", "structure": "Định ngữ + (的) + Trung tâm ngữ", "explain": "Trong tiếng Trung, định ngữ (từ bổ nghĩa) luôn đứng TRƯỚC trung tâm ngữ (từ được bổ nghĩa). Khi biểu thị quan hệ sở hữu, thêm \"的\" ở giữa.", "examples": [{"han": "这是汉语词典，不是汉语课本。", "pinyin": "Zhè shì Hànyǔ cídiǎn, búshì Hànyǔ kèběn.", "vi": "Đây là từ điển tiếng Trung, không phải sách giáo khoa tiếng Trung."}, {"han": "玛丽是加拿大人，不是美国人。", "pinyin": "Mǎlì shì Jiānádàrén, búshì Měiguórén.", "vi": "Mary là người Canada, không phải người Mỹ."}, {"han": "她是我的同屋，也是我的同学。", "pinyin": "Tā shì wǒ de tóngwū, yě shì wǒ de tóngxué.", "vi": "Cô ấy là bạn cùng phòng của tôi, cũng là bạn học của tôi."}, {"han": "他叫李军，是大卫的朋友。", "pinyin": "Tā jiào Lǐ Jūn, shì Dàwèi de péngyou.", "vi": "Anh ấy tên là Lý Quân, là bạn của Đại Vệ."}]}, {"title": "2. Phương vị từ — 在/是 + phương vị — Bài 4", "structure": "① N. + 在 + phương vị　　② Phương vị + 是 + N.", "explain": "Danh từ phương vị: 东(dōng)/西(xī)/南(nán)/北(běi) + 边(biān) → 东边/西边/南边/北边 (phía đông/tây/nam/bắc).", "examples": [{"han": "图书馆在那儿。", "pinyin": "Túshūguǎn zài nàr.", "vi": "Thư viện ở đằng kia."}, {"han": "加拿大在美国的北边。", "pinyin": "Jiānádà zài Měiguó de běibian.", "vi": "Canada ở phía bắc nước Mỹ."}, {"han": "教学楼在宿舍楼的右边。", "pinyin": "Jiàoxuélóu zài sùshèlóu de yòubian.", "vi": "Tòa nhà giảng dạy ở bên phải tòa ký túc xá."}, {"han": "那儿是宿舍楼。", "pinyin": "Nàr shì sùshèlóu.", "vi": "Đằng kia là tòa ký túc xá."}, {"han": "教学楼的北边是图书馆。", "pinyin": "Jiàoxuélóu de běibian shì túshūguǎn.", "vi": "Phía bắc tòa nhà giảng dạy là thư viện."}, {"han": "玛丽的左边是大卫。", "pinyin": "Mǎlì de zuǒbian shì Dàwèi.", "vi": "Bên trái Mary là Đại Vệ."}, {"han": "教学楼在图书馆的北边。", "pinyin": "Jiàoxuélóu zài túshūguǎn de běibian.", "vi": "Tòa nhà giảng dạy ở phía bắc thư viện."}, {"han": "李军在大卫的右边。", "pinyin": "Lǐ Jūn zài Dàwèi de yòubian.", "vi": "Lý Quân ở bên phải Đại Vệ."}, {"han": "日本在中国的东边。", "pinyin": "Rìběn zài Zhōngguó de dōngbian.", "vi": "Nhật Bản ở phía đông Trung Quốc."}]}, {"title": "3. 二 và 两 — Bài 9", "structure": "二 (số đếm/thứ tự)　·　两 + lượng từ", "explain": "\"二\" dùng khi đọc số thứ tự, số nhiều chữ số: 十二、二十、二十二、第二、二号楼、二路公共汽车. \"二\" và \"两\" đều dùng được với số lớn: 两/二百、两/二千、两/二万. Trước LƯỢNG TỪ, thường dùng \"两\" (không dùng \"二\"): 两本、两块、两瓶、两毛、两个.", "examples": [{"han": "再买两瓶水。", "pinyin": "Zài mǎi liǎng píng shuǐ.", "vi": "Mua thêm hai chai nước nữa."}, {"han": "两瓶啤酒七块。", "pinyin": "Liǎng píng píjiǔ qī kuài.", "vi": "Hai chai bia bảy đồng."}]}, {"title": "4. 每……都…… — Bài 12", "structure": "每 + (danh từ) + 都 + Vị ngữ", "explain": "Biểu thị không có ngoại lệ (\"mỗi… đều…\").", "examples": [{"han": "我每天早上都喝咖啡。", "pinyin": "Wǒ měitiān zǎoshang dōu hē kāfēi.", "vi": "Mỗi sáng tôi đều uống cà phê."}, {"han": "他们每个人都知道。", "pinyin": "Tāmen měi ge rén dōu zhīdào.", "vi": "Mỗi người trong họ đều biết."}, {"han": "这儿每天都下雨。", "pinyin": "Zhèr měitiān dōu xiàyǔ.", "vi": "Ở đây ngày nào cũng mưa."}, {"han": "大卫每个周末都去酒吧。", "pinyin": "Dàwèi měi ge zhōumò dōu qù jiǔbā.", "vi": "Cuối tuần nào Đại Vệ cũng đi quán bar."}]}, {"title": "5. 从……到…… — Bài 12", "structure": "从 + điểm bắt đầu + 到 + điểm kết thúc", "explain": "Biểu thị mốc thời gian/địa điểm bắt đầu và kết thúc (\"từ… đến…\").", "examples": [{"han": "我从八点到十点有课。", "pinyin": "Wǒ cóng bā diǎn dào shí diǎn yǒu kè.", "vi": "Tôi có tiết học từ 8 giờ đến 10 giờ."}, {"han": "中村从下午四点到晚上八点有时间。", "pinyin": "Zhōngcūn cóng xiàwǔ sì diǎn dào wǎnshang bā diǎn yǒu shíjiān.", "vi": "Nakamura có thời gian rảnh từ 4 giờ chiều đến 8 giờ tối."}, {"han": "他们从星期一到星期五都有课。", "pinyin": "Tāmen cóng xīngqīyī dào xīngqīwǔ dōu yǒu kè.", "vi": "Từ thứ Hai đến thứ Sáu họ đều có tiết học."}]}, {"title": "6. 先……然后…… — Bài 13", "structure": "先 + hành động 1，然后 + hành động 2", "explain": "Biểu thị trình tự trước–sau của hai hành động (\"trước…, sau đó…\").", "examples": [{"han": "我先去银行，然后去上课。", "pinyin": "Wǒ xiān qù yínháng, ránhòu qù shàngkè.", "vi": "Tôi đi ngân hàng trước, sau đó đi học."}, {"han": "李军先去电影院，然后回宿舍。", "pinyin": "Lǐ Jūn xiān qù diànyǐngyuàn, ránhòu huí sùshè.", "vi": "Lý Quân đi rạp chiếu phim trước, sau đó về ký túc xá."}, {"han": "刘老师先去图书馆借书，然后去教室上课。", "pinyin": "Liú lǎoshī xiān qù túshūguǎn jiè shū, ránhòu qù jiàoshì shàngkè.", "vi": "Cô Lưu đi thư viện mượn sách trước, sau đó đến lớp dạy học."}, {"han": "他先去商店买东西，然后去书店买词典。", "pinyin": "Tā xiān qù shāngdiàn mǎi dōngxi, ránhòu qù shūdiàn mǎi cídiǎn.", "vi": "Anh ấy đi cửa hàng mua đồ trước, sau đó đi hiệu sách mua từ điển."}]}, {"title": "7. A 跟/和 B 一起 + Động từ — Bài 8 & Bài 13", "structure": "A + 跟/和 + B + 一起 + Động từ (+ Tân ngữ)", "explain": "Cấu trúc biểu thị \"A cùng B làm gì\": 跟/和 (giới từ \"với, cùng\") nối chủ thể A với đối tượng cùng thực hiện hành động, 一起 (phó từ \"cùng nhau\") đứng trước động từ chính để nhấn mạnh hành động được thực hiện chung. Lưu ý: 和 (bài 8) và 一起 (bài 13) là hai từ riêng biệt trong Boya — 和 vốn là liên từ nghĩa \"và\" nối danh từ/đại từ, 一起 vốn là phó từ nghĩa \"cùng nhau\". Cấu trúc \"A 跟/和 B 一起 + V\" dưới đây là cách dùng kết hợp phổ biến trong tiếng Trung hiện đại (không có trong bảng ngữ pháp gốc của Boya 1) — được trình bày thêm để học viên nắm được cách vận dụng đầy đủ ngoài thực tế.", "examples": [{"han": "我跟朋友去老师家做客。", "pinyin": "Wǒ gēn péngyou qù lǎoshī jiā zuòkè.", "vi": "Tôi và bạn đến nhà thầy chơi."}, {"han": "他和同屋一起去图书馆借书。", "pinyin": "Tā hé tóngwū yìqǐ qù túshūguǎn jiè shū.", "vi": "Anh ấy cùng bạn cùng phòng đi thư viện mượn sách."}, {"han": "玛丽跟大卫一起去看电影。", "pinyin": "Mǎlì gēn Dàwèi yìqǐ qù kàn diànyǐng.", "vi": "Mary cùng Đại Vệ đi xem phim."}, {"han": "我们和老师一起唱歌。", "pinyin": "Wǒmen hé lǎoshī yìqǐ chànggē.", "vi": "Chúng tôi cùng thầy/cô hát."}]}, {"title": "8. A 给 B + Động từ (+ Tân ngữ) — Bài 9", "structure": "给 (gěi): động từ \"đưa, cho\"　·　A + 给 + B + V + (O): \"A làm gì đó cho B\"", "explain": "给 vốn là động từ độc lập nghĩa \"đưa, cho\" (ví dụ: 给你钱 — đưa tiền cho bạn). Ngoài ra, 给 còn thường được dùng như giới từ đứng trước động từ khác, tạo thành cấu trúc \"A 给 B + V + (O)\", biểu thị hành động của A được thực hiện HƯỚNG TỚI hoặc VÌ LỢI ÍCH của B (\"A làm gì đó cho/tặng cho B\"). Đây là cách mở rộng cách dùng của 给 ngoài câu mẫu gốc trong Boya 1, giúp học viên vận dụng linh hoạt hơn.", "examples": [{"han": "给你钱。", "pinyin": "Gěi nǐ qián.", "vi": "Đưa tiền cho bạn."}, {"han": "他给我买了一件毛衣。", "pinyin": "Tā gěi wǒ mǎi le yí jiàn máoyī.", "vi": "Anh ấy mua cho tôi một cái áo len."}, {"han": "妈妈给我们做了很多好吃的菜。", "pinyin": "Māma gěi wǒmen zuò le hěn duō hǎochī de cài.", "vi": "Mẹ nấu cho chúng tôi nhiều món ngon."}, {"han": "我给你介绍一下我的朋友。", "pinyin": "Wǒ gěi nǐ jièshào yíxià wǒ de péngyou.", "vi": "Tôi giới thiệu cho bạn bạn của tôi."}, {"han": "老师给学生们讲语法。", "pinyin": "Lǎoshī gěi xuéshengmen jiǎng yǔfǎ.", "vi": "Thầy/cô giảng ngữ pháp cho học sinh."}]}, {"title": "9. 会 — Can/To know how to — Bài 17", "structure": "会 + Động từ　·　会 còn dùng để DỰ ĐOÁN và diễn tả SỞ TRƯỜNG", "explain": "Cách dùng 1 — Năng lực (kỹ năng đã học được): 会 + V đặt trước động từ, biểu thị đã học và có khả năng làm việc gì (đây là cách dùng chính, có trong Boya 1 bài 17). Cách dùng 2 — Dự đoán: 会 còn dùng để diễn đạt khả năng/dự đoán một sự việc CÓ THỂ xảy ra trong tương lai, thường đi cùng \"的\" ở cuối câu (\"sẽ...\"). Cách dùng 3 — Sở trường: 会 + V còn nhấn mạnh ai đó GIỎI, KHÉO làm việc gì (không chỉ đơn thuần biết làm), thường nhấn mạnh bằng 很/真 trước 会. Hai cách dùng sau (dự đoán, sở trường) là mở rộng thêm ngoài nội dung bài 17 gốc, giúp học viên hiểu đầy đủ hơn về 会.", "examples": [{"han": "我会包饺子。", "pinyin": "Wǒ huì bāo jiǎozi.", "vi": "Tôi biết gói sủi cảo."}, {"han": "我会说英语，他不会说英语。", "pinyin": "Wǒ huì shuō Yīngyǔ, tā bú huì shuō Yīngyǔ.", "vi": "Tôi biết nói tiếng Anh, anh ấy không biết nói tiếng Anh."}, {"han": "你会骑自行车吗？", "pinyin": "Nǐ huì qí zìxíngchē ma?", "vi": "Bạn biết đi xe đạp không?"}, {"han": "明天会下雨的。", "pinyin": "Míngtiān huì xiàyǔ de.", "vi": "Ngày mai trời sẽ mưa."}, {"han": "他学习这么努力，考试一定会通过的。", "pinyin": "Tā xuéxí zhème nǔlì, kǎoshì yídìng huì tōngguò de.", "vi": "Anh ấy học chăm như vậy, kỳ thi chắc chắn sẽ đỗ."}, {"han": "她很会做饭。", "pinyin": "Tā hěn huì zuòfàn.", "vi": "Cô ấy rất giỏi nấu ăn."}, {"han": "大卫真会说话。", "pinyin": "Dàwèi zhēn huì shuōhuà.", "vi": "Đại Vệ thật khéo ăn nói."}]}, {"title": "10. 就 và 才 — Bài 19", "structure": "就 (sớm/nhanh hơn dự kiến)　·　才 (muộn/chậm hơn dự kiến)", "explain": "就: nhấn mạnh hành động xảy ra SỚM hoặc NHANH hơn dự kiến. 才: nhấn mạnh hành động xảy ra MUỘN hoặc CHẬM hơn dự kiến.", "examples": [{"han": "他上个星期就回国了。", "pinyin": "Tā shàng ge xīngqī jiù huíguó le.", "vi": "Anh ấy tuần trước đã về nước rồi."}, {"han": "玛丽早上六点就起床。", "pinyin": "Mǎlì zǎoshang liù diǎn jiù qǐchuáng.", "vi": "Mary 6 giờ sáng đã dậy rồi."}, {"han": "妹妹三岁就开始学习跳舞了。", "pinyin": "Mèimei sān suì jiù kāishǐ xuéxí tiàowǔ le.", "vi": "Em gái 3 tuổi đã bắt đầu học múa."}, {"han": "他早上六点就起床了，我九点才起床。", "pinyin": "Tā zǎoshang liù diǎn jiù qǐchuáng le, wǒ jiǔ diǎn cái qǐchuáng.", "vi": "Anh ấy 6 giờ sáng đã dậy rồi, tôi 9 giờ mới dậy."}, {"han": "玛丽七点半就去教室了，大卫八点半才去。", "pinyin": "Mǎlì qī diǎn bàn jiù qù jiàoshì le, Dàwèi bā diǎn bàn cái qù.", "vi": "Mary 7 rưỡi đã đến lớp rồi, Đại Vệ 8 rưỡi mới đến."}, {"han": "爷爷六十岁以后才开始学习英语。", "pinyin": "Yéye liùshí suì yǐhòu cái kāishǐ xuéxí Yīngyǔ.", "vi": "Ông nội sau 60 tuổi mới bắt đầu học tiếng Anh."}]}, {"title": "11. 再 và 又 — Bài 9 & Bài 16", "structure": "再 (zài): việc CHƯA xảy ra (tương lai/giả định/mệnh lệnh)　·　又 (yòu): việc ĐÃ xảy ra lặp lại (quá khứ/hiện tại/quy luật)", "explain": "再 và 又 đều mang nghĩa \"lại, thêm lần nữa\" nhưng khác nhau về THỜI ĐIỂM của hành động lặp lại: 再 dùng cho hành động CHƯA xảy ra — thường ở câu tương lai, câu cầu khiến, câu giả định (\"再+ V\": làm lại/thêm lần nữa, sắp tới). 又 dùng cho hành động ĐÃ xảy ra rồi lặp lại, hoặc một quy luật/hiện tượng lặp đi lặp lại trong quá khứ/hiện tại (\"又 + V\": đã lại làm, lại xảy ra). Ngoài ra, 再 còn dùng trong cấu trúc phủ định \"不再\" (không...nữa), còn 又 hay xuất hiện trong câu than \"又...了\" để nhấn mạnh sự lặp lại gây cảm xúc (vui, chán...). Boya 1 không có mục ngữ pháp đối lập riêng cho cặp 再/又 (chỉ xuất hiện như từ vựng ở bài 9 và bài 16), phần trình bày dưới đây được trung tâm hệ thống hóa đầy đủ để học viên phân biệt rõ.", "examples": [{"han": "我买两瓶，再买两瓶水。", "pinyin": "Wǒ mǎi liǎng píng, zài mǎi liǎng píng shuǐ.", "vi": "Tôi mua hai chai, mua thêm hai chai nước nữa."}, {"han": "明天又是周末，太高兴了！", "pinyin": "Míngtiān yòu shì zhōumò, tài gāoxìng le!", "vi": "Ngày mai lại là cuối tuần rồi, vui quá!"}, {"han": "请你再说一遍。", "pinyin": "Qǐng nǐ zài shuō yí biàn.", "vi": "Xin bạn nói lại một lần nữa."}, {"han": "他昨天来了，今天又来了。", "pinyin": "Tā zuótiān lái le, jīntiān yòu lái le.", "vi": "Hôm qua anh ấy đến rồi, hôm nay lại đến nữa."}, {"han": "如果你想喝，可以再喝一杯。", "pinyin": "Rúguǒ nǐ xiǎng hē, kěyǐ zài hē yì bēi.", "vi": "Nếu bạn muốn uống, có thể uống thêm một ly nữa."}, {"han": "他又迟到了。", "pinyin": "Tā yòu chídào le.", "vi": "Anh ấy lại đến muộn rồi."}]}, {"title": "12. Trật tự từ trong câu — Chủ ngữ – Thời gian – Phương vị/trạng ngữ nơi chốn – Động từ", "structure": "Chủ ngữ + (Thời gian) + (Phương vị/nơi chốn) + Động từ + (Tân ngữ)", "explain": "Từ chỉ THỜI GIAN luôn đứng TRƯỚC động từ (khác tiếng Việt, nơi trạng ngữ thời gian có thể đứng cuối câu); từ chỉ PHƯƠNG VỊ/nơi chốn khi đi với \"在\" đứng ngay sau \"在\" và sau chủ ngữ.", "examples": [{"han": "我每天早上都喝咖啡。", "pinyin": "Wǒ měitiān zǎoshang dōu hē kāfēi.", "vi": "CN + Thời gian + ĐT — Mỗi sáng tôi đều uống cà phê."}, {"han": "我从八点到十点有课。", "pinyin": "Wǒ cóng bā diǎn dào shí diǎn yǒu kè.", "vi": "CN + Thời gian + ĐT — Tôi có tiết học từ 8 giờ đến 10 giờ."}, {"han": "我先去银行，然后去上课。", "pinyin": "Wǒ xiān qù yínháng, ránhòu qù shàngkè.", "vi": "CN + ĐT1 + ĐT2 (trình tự thời gian) — Tôi đi ngân hàng trước, sau đó đi học."}, {"han": "早上八点上课的话，我就早一点儿睡。", "pinyin": "Zǎoshang bā diǎn shàngkè dehuà, wǒ jiù zǎo yìdiǎnr shuì.", "vi": "Thời gian đứng đầu câu, CN sau — Nếu 8 giờ sáng có tiết, tôi sẽ ngủ sớm một chút."}, {"han": "图书馆在那儿。", "pinyin": "Túshūguǎn zài nàr.", "vi": "CN + ĐT \"在\" + phương vị — Thư viện ở đằng kia."}, {"han": "我们从星期一到星期五都有课。", "pinyin": "Wǒmen cóng xīngqīyī dào xīngqīwǔ dōu yǒu kè.", "vi": "CN + Thời gian + ĐT — Từ thứ Hai đến thứ Sáu chúng tôi đều có tiết học."}]}];
+const EX = {"bai1": [{"prompt": "习惯", "type": "han_to_pinyin", "answer": "xíguàn"}, {"prompt": "生活", "type": "han_to_pinyin", "answer": "shēnghuó"}, {"prompt": "毛病", "type": "han_to_pinyin", "answer": "máobing"}, {"prompt": "医院", "type": "han_to_pinyin", "answer": "yīyuàn"}, {"prompt": "考试", "type": "han_to_pinyin", "answer": "kǎoshì"}, {"prompt": "zhǔnbèi", "type": "pinyin_to_han", "answer": "准备"}, {"prompt": "lǐwù", "type": "pinyin_to_han", "answer": "礼物"}, {"prompt": "xíguàn", "type": "pinyin_to_han", "answer": "习惯"}, {"prompt": "jǐ (chật)", "type": "pinyin_to_han", "answer": "挤"}, {"prompt": "yīshēng", "type": "pinyin_to_han", "answer": "医生"}], "bai2": [{"q": "我已经______这儿的生活了。", "options": {"A": "习惯", "B": "惯习", "C": "惯", "D": "习"}, "answer": "A"}, {"q": "早上八点上课，我______早一点儿睡。", "options": {"A": "才", "B": "就", "C": "要", "D": "也"}, "answer": "C"}, {"q": "他工作以后，睡懒觉的______就改了。", "options": {"A": "毛病", "B": "毛", "C": "病毛", "D": "手病"}, "answer": "A"}, {"q": "你朋友生病了，要去______看看她。", "options": {"A": "银行", "B": "医院", "C": "购物中心", "D": "图书馆"}, "answer": "B"}, {"q": "医生给我开了一点儿______。", "options": {"A": "要", "B": "约", "C": "药", "D": "乐"}, "answer": "C"}, {"q": "今天我要______很多生词，因为明天有考试。", "options": {"A": "北", "B": "背", "C": "比", "D": "皆"}, "answer": "B"}, {"q": "那件毛衣的______有点儿深，我喜欢浅一点儿的。", "options": {"A": "颜色", "B": "颜", "C": "严色", "D": "色颜"}, "answer": "A"}, {"q": "我打算周末去朋友家______。", "options": {"A": "做客", "B": "做容", "C": "作客", "D": "坐客"}, "answer": "A"}, {"q": "从学校到______要坐地铁十分钟。", "options": {"A": "银行", "B": "很行", "C": "银航", "D": "银形"}, "answer": "A"}, {"q": "他的病还没好，医生说他还要______几天医院。", "options": {"A": "主", "B": "住", "C": "往", "D": "注"}, "answer": "B"}], "bai3": [{"q": "现在已经______了，你还没起床吗？", "options": {"A": "习惯", "B": "十点", "C": "才", "D": "生活"}, "answer": "B"}, {"q": "我______早上八点才起床。", "options": {"A": "一般", "B": "已经", "C": "大概", "D": "已经了"}, "answer": "A"}, {"q": "你朋友______了？", "options": {"A": "多少", "B": "多大", "C": "几", "D": "什么"}, "answer": "B"}, {"q": "早上八点上课的话，我______早一点儿睡。", "options": {"A": "才", "B": "就", "C": "又", "D": "还"}, "answer": "B"}, {"q": "在美国，我一般早上八点______起床。", "options": {"A": "就", "B": "也", "C": "才", "D": "都"}, "answer": "C"}, {"q": "他______没习惯这儿的天气。", "options": {"A": "才", "B": "还", "C": "就", "D": "已经"}, "answer": "B"}, {"q": "你______不舒服，就应该去看医生。", "options": {"A": "觉得", "B": "打算", "C": "打算是", "D": "因为"}, "answer": "A"}, {"q": "医生说他身体好多了，这个星期______可以出院了。", "options": {"A": "才", "B": "就", "C": "还", "D": "又"}, "answer": "B"}, {"q": "A：谢谢你送我这么好的礼物！ B：______，这是我应该做的。", "options": {"A": "不客气", "B": "别客气", "C": "没关系", "D": "对不起"}, "answer": "B"}], "bai4": [{"vi": "Tôi đã quen với cuộc sống ở Bắc Kinh rồi.", "answer": "我已经习惯北京的生活了。"}, {"vi": "Ngày mai có thi, hôm nay tôi phải ngủ sớm một chút.", "answer": "明天有考试，我今天得早点儿睡觉。"}, {"vi": "Bạn của bạn năm nay bao nhiêu tuổi rồi?", "answer": "你朋友今年多大了？"}, {"vi": "Bác sĩ nói sức khỏe của bạn tôi không nghiêm trọng.", "answer": "医生说我朋友的病不严重。"}, {"vi": "Đừng khách sáo, cứ tự nhiên như ở nhà.", "answer": "别客气，就跟在自己家一样。"}], "bai5_dialogue": [["大卫", "玛丽，怎么样？现在好一点儿了吗？"], ["玛丽", "好一点儿了。谢谢你来看我。"], ["大卫", "别客气。不上课，也没有作业，挺舒服的吧？"], ["玛丽", "不舒服。一个人吃，一个人睡，一个人玩儿，挺无聊的。"], ["大卫", "你在医院都干什么呢？"], ["玛丽", "看看书，听听音乐，睡睡觉，做做梦……"], ["大卫", "你太幸福了！我每天在学校背生词啦，听写啦，做作业啦，考试啦……累死了。"], ["玛丽", "那咱们换换，怎么样？你来医院住，我去上课。"], ["大卫", "好啊，不过你得问问医生行不行。如果医生同意的话，咱们就换。对了，你中午想吃什么？米饭、炒菜、面条儿，还是饺子？"], ["玛丽", "麦当劳！我想吃麦当劳。"], ["大卫", "你不是病人吗？身体不好，还得吃药……吃面条儿吧！"]], "bai5": [{"q": "玛丽觉得在医院很舒服。", "answer": false, "explain": "Sai — Mary nói \"不舒服\" (không thoải mái), vì một mình ăn, một mình ngủ, một mình chơi, rất chán (\"挺无聊的\")."}, {"q": "玛丽在医院看看书，听听音乐，睡睡觉。", "answer": true, "explain": "Đúng — Mary trả lời đúng như vậy khi Đại Vệ hỏi cô làm gì trong bệnh viện."}, {"q": "大卫说他在学校很轻松，没有什么事做。", "answer": false, "explain": "Sai — Đại Vệ nói mỗi ngày phải học thuộc từ mới, viết chính tả, làm bài tập, thi cử... \"累死了\" (mệt muốn chết)."}, {"q": "玛丽想跟大卫换一换，让大卫来医院住，她去上课。", "answer": true, "explain": "Đúng — Mary đề nghị \"那咱们换换，怎么样？你来医院住，我去上课。\""}, {"q": "大卫说只要医生同意，他们就可以换。", "answer": true, "explain": "Đúng — Đại Vệ nói \"不过你得问问医生行不行。如果医生同意的话，咱们就换。\""}, {"q": "玛丽中午想吃米饭。", "answer": false, "explain": "Sai — Mary nói cô muốn ăn \"麦当劳\" (McDonald's), không phải cơm."}, {"q": "大卫最后同意让玛丽吃麦当劳。", "answer": false, "explain": "Sai — Đại Vệ nói cô là bệnh nhân, sức khỏe không tốt, còn phải uống thuốc, nên bảo cô \"吃面条儿吧！\" (ăn mì thôi!), không đồng ý cho ăn McDonald's."}]};
+
+/* ============================================================
+   TIỆN ÍCH CHUNG
+   ============================================================ */
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(()=> t.classList.remove('show'), 1800);
+}
+
+/* ============================================================
+   TAB CHÍNH (Từ vựng / Ngữ pháp / Bài tập)
+   ============================================================ */
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+    document.getElementById('view-'+btn.dataset.view).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+
+/* Sub-tabs bài tập */
+document.querySelectorAll('.subtab-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.subtab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.subview').forEach(v=>v.classList.remove('active'));
+    document.getElementById('sub-'+btn.dataset.sub).classList.add('active');
+    window.scrollTo({top:document.querySelector('.tab-bar-wrap').offsetHeight, behavior:'smooth'});
+  });
+});
+
+/* ============================================================
+   PRESENT MODE (trình chiếu)
+   ============================================================ */
+document.getElementById('presentBtn').addEventListener('click', ()=>{
+  document.body.classList.add('presenting');
+});
+document.getElementById('exitPresentBtn').addEventListener('click', ()=>{
+  document.body.classList.remove('presenting');
+});
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape' && document.body.classList.contains('presenting')){
+    document.body.classList.remove('presenting');
+  }
+});
+
+/* ============================================================
+   TỪ VỰNG
+   ============================================================ */
+const baiSet = [...new Set(VOCAB.map(v=>v.bai))].sort((a,b)=>a-b);
+const filterSelect = document.getElementById('vocabFilterBai');
+baiSet.forEach(b=>{
+  const opt = document.createElement('option');
+  opt.value = b;
+  opt.textContent = 'Bài ' + b;
+  filterSelect.appendChild(opt);
+});
+
+let currentVocabMode = 'table'; // table | card | flash
+
+function getFilteredVocab(){
+  const q = document.getElementById('vocabSearch').value.trim().toLowerCase();
+  const baiFilter = filterSelect.value;
+  return VOCAB.filter(v=>{
+    if(baiFilter !== 'all' && String(v.bai) !== baiFilter) return false;
+    if(!q) return true;
+    return v.han.toLowerCase().includes(q) ||
+           v.pinyin.toLowerCase().includes(q) ||
+           v.nghia.toLowerCase().includes(q);
+  });
+}
+
+function renderVocabTable(){
+  const list = getFilteredVocab();
+  const wrap = document.getElementById('vocabTableWrap');
+  document.getElementById('vocabCount').textContent = list.length + ' từ';
+  if(list.length === 0){
+    wrap.innerHTML = '<div style="padding:30px; text-align:center; color:var(--ink-soft); font-weight:700;">Không tìm thấy từ nào phù hợp.</div>';
+    return;
+  }
+  let html = '';
+  let lastBai = null;
+  list.forEach(v=>{
+    if(v.bai !== lastBai){
+      html += `<div class="vocab-group-header">Bài ${v.bai}</div>`;
+      lastBai = v.bai;
+    }
+    html += `<div class="vocab-row">
+      <div class="stt">${v.stt}</div>
+      <div class="han">${v.han}</div>
+      <div class="pinyin">${v.pinyin}</div>
+      <div class="nghia">${v.nghia}</div>
+    </div>`;
+  });
+  wrap.innerHTML = html;
+}
+
+function renderVocabCards(){
+  const list = getFilteredVocab();
+  const wrap = document.getElementById('vocabCardWrap');
+  document.getElementById('vocabCount').textContent = list.length + ' từ';
+  if(list.length === 0){
+    wrap.innerHTML = '<div style="padding:30px; text-align:center; color:var(--ink-soft); font-weight:700; grid-column:1/-1;">Không tìm thấy từ nào phù hợp.</div>';
+    return;
+  }
+  wrap.innerHTML = list.map(v => `
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-face flashcard-front">
+          <span class="stt-badge">#${v.stt}</span>
+          <span class="bai-badge">Bài ${v.bai}</span>
+          <div class="han">${v.han}</div>
+          <div class="flip-hint">chạm để xem nghĩa</div>
+        </div>
+        <div class="flashcard-face flashcard-back">
+          <div class="pinyin">${v.pinyin}</div>
+          <div class="nghia">${v.nghia}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ------- FLASHCARD ĐƠN (giữa trang, có trộn thẻ) ------- */
+let flashDeck = [];
+let flashIndex = 0;
+let flashShuffled = false;
+
+function shuffleArray(arr){
+  const a = arr.slice();
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i+1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function buildFlashDeck(){
+  const list = getFilteredVocab();
+  flashDeck = flashShuffled ? shuffleArray(list) : list.slice();
+  flashIndex = 0;
+}
+
+function renderVocabFlash(){
+  buildFlashDeck();
+  document.getElementById('vocabCount').textContent = flashDeck.length + ' từ';
+  renderFlashCurrent();
+}
+
+function renderFlashCurrent(){
+  const wrap = document.getElementById('vocabFlashWrap');
+  if(flashDeck.length === 0){
+    wrap.innerHTML = '<div style="padding:30px; text-align:center; color:var(--ink-soft); font-weight:700;">Không tìm thấy từ nào phù hợp.</div>';
+    return;
+  }
+  const v = flashDeck[flashIndex];
+  wrap.innerHTML = `
+    <div class="flash-single-toolbar">
+      <button class="fs-btn" id="fsShuffleBtn">🔀 Trộn thẻ</button>
+      <span class="flash-single-progress" id="fsProgress">${flashIndex+1} / ${flashDeck.length}</span>
+      <button class="fs-btn" id="fsRestartBtn">↺ Bắt đầu lại</button>
+    </div>
+    <div class="flash-single-stage" id="fsStage">
+      <div class="flash-single-inner">
+        <div class="flash-single-face flash-single-front">
+          <span class="fs-stt-badge">#${v.stt}</span>
+          <span class="fs-bai-badge">Bài ${v.bai}</span>
+          <div class="han">${v.han}</div>
+          <div class="flash-single-hint">chạm vào thẻ để xem pinyin &amp; nghĩa</div>
+        </div>
+        <div class="flash-single-face flash-single-back">
+          <div class="han-echo">${v.han}</div>
+          <div class="pinyin">${v.pinyin}</div>
+          <div class="nghia">${v.nghia}</div>
+        </div>
+      </div>
+    </div>
+    <div class="flash-single-nav">
+      <button class="nav-btn" id="fsPrevBtn" ${flashIndex===0 ? 'disabled' : ''}>‹</button>
+      <button class="nav-btn" id="fsNextBtn" ${flashIndex===flashDeck.length-1 ? 'disabled' : ''}>›</button>
+    </div>
+  `;
+  if(flashShuffled){
+    document.getElementById('fsShuffleBtn').classList.add('shuffled');
+  }
+  document.getElementById('fsStage').addEventListener('click', ()=>{
+    document.getElementById('fsStage').classList.toggle('flipped');
+  });
+  document.getElementById('fsPrevBtn').addEventListener('click', (e)=>{
+    e.stopPropagation();
+    if(flashIndex > 0){ flashIndex--; renderFlashCurrent(); }
+  });
+  document.getElementById('fsNextBtn').addEventListener('click', (e)=>{
+    e.stopPropagation();
+    if(flashIndex < flashDeck.length-1){ flashIndex++; renderFlashCurrent(); }
+  });
+  document.getElementById('fsShuffleBtn').addEventListener('click', (e)=>{
+    e.stopPropagation();
+    flashShuffled = !flashShuffled;
+    buildFlashDeck();
+    renderFlashCurrent();
+    showToast(flashShuffled ? 'Đã trộn thẻ' : 'Đã tắt trộn thẻ');
+  });
+  document.getElementById('fsRestartBtn').addEventListener('click', (e)=>{
+    e.stopPropagation();
+    if(flashShuffled){ flashDeck = shuffleArray(getFilteredVocab()); }
+    flashIndex = 0;
+    renderFlashCurrent();
+  });
+}
+
+function renderVocab(){
+  document.getElementById('vocabTableWrap').style.display='none';
+  document.getElementById('vocabCardWrap').style.display='none';
+  document.getElementById('vocabFlashWrap').style.display='none';
+  if(currentVocabMode === 'table'){
+    document.getElementById('vocabTableWrap').style.display='';
+    renderVocabTable();
+  } else if(currentVocabMode === 'card'){
+    document.getElementById('vocabCardWrap').style.display='grid';
+    renderVocabCards();
+  } else {
+    document.getElementById('vocabFlashWrap').style.display='flex';
+    renderVocabFlash();
+  }
+}
+
+document.getElementById('vocabSearch').addEventListener('input', renderVocab);
+filterSelect.addEventListener('change', renderVocab);
+
+function setVocabMode(mode){
+  currentVocabMode = mode;
+  document.getElementById('btnViewTable').classList.toggle('active', mode==='table');
+  document.getElementById('btnViewCard').classList.toggle('active', mode==='card');
+  document.getElementById('btnViewFlash').classList.toggle('active', mode==='flash');
+  renderVocab();
+}
+document.getElementById('btnViewTable').addEventListener('click', ()=> setVocabMode('table'));
+document.getElementById('btnViewCard').addEventListener('click', ()=> setVocabMode('card'));
+document.getElementById('btnViewFlash').addEventListener('click', ()=> setVocabMode('flash'));
+
+renderVocab();
+
+/* ============================================================
+   NGỮ PHÁP
+   ============================================================ */
+function renderGrammar(){
+  const wrap = document.getElementById('grammarWrap');
+  wrap.innerHTML = GRAMMAR.map(g => `
+    <div class="grammar-card">
+      <h3 class="vi-text">${g.title}</h3>
+      <div class="grammar-structure vi-text">${g.structure}</div>
+      <div class="grammar-explain vi-text">${g.explain}</div>
+      <div class="grammar-examples">
+        ${g.examples.map(ex => `
+          <div class="ex-item">
+            <span class="ex-han han">${ex.han}</span>
+            <span class="ex-pinyin">${ex.pinyin}</span>
+            <span class="ex-vi">${ex.vi}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+renderGrammar();
+
+/* ============================================================
+   BÀI 1 — Viết phiên âm / chữ Hán (tự chấm, ẩn/hiện đáp án)
+   ============================================================ */
+function renderE1(){
+  const wrap = document.getElementById('e1Wrap');
+  wrap.innerHTML = EX.bai1.map((item, i) => {
+    const promptClass = item.type === 'pinyin_to_han' ? 'fb-prompt pinyin-prompt' : 'fb-prompt han';
+    return `
+    <div class="fill-blank-item">
+      <div class="${promptClass}">${item.prompt}</div>
+      <span style="color:var(--ink-soft); font-weight:700;">→</span>
+      <input type="text" class="fb-input" data-idx="${i}" placeholder="${item.type==='han_to_pinyin' ? 'nhập pinyin...' : 'nhập chữ Hán...'}">
+      <span class="fb-check-icon" data-icon-idx="${i}"></span>
+    </div>`;
+  }).join('');
+}
+function normalizePinyin(s){
+  return s.trim().toLowerCase()
+    .replace(/[āáǎà]/g,'a').replace(/[ēéěè]/g,'e').replace(/[īíǐì]/g,'i')
+    .replace(/[ōóǒò]/g,'o').replace(/[ūúǔù]/g,'u').replace(/[ǖǘǚǜü]/g,'v')
+    .replace(/\s+/g,'');
+}
+function checkE1(){
+  let correct = 0;
+  EX.bai1.forEach((item,i)=>{
+    const input = document.querySelector('#e1Wrap [data-idx="'+i+'"]');
+    const icon = document.querySelector('#e1Wrap [data-icon-idx="'+i+'"]');
+    const val = input.value.trim();
+    let isCorrect = false;
+    if(item.type === 'han_to_pinyin'){
+      isCorrect = normalizePinyin(val) === normalizePinyin(item.answer);
+    } else {
+      isCorrect = val === item.answer;
+    }
+    if(isCorrect){
+      input.classList.remove('wrong'); input.classList.add('correct');
+      icon.textContent = '✅';
+      correct++;
+    } else {
+      input.classList.remove('correct'); input.classList.add('wrong');
+      icon.textContent = '❌ ' + item.answer;
+    }
+  });
+  const scoreEl = document.getElementById('e1Score');
+  scoreEl.style.display='block';
+  scoreEl.textContent = `Kết quả: ${correct} / ${EX.bai1.length} câu đúng`;
+}
+function resetE1(){
+  renderE1();
+  document.getElementById('e1Score').style.display='none';
+}
+document.getElementById('checkE1Btn').addEventListener('click', checkE1);
+document.getElementById('resetE1Btn').addEventListener('click', resetE1);
+renderE1();
+
+/* ============================================================
+   BÀI 2 & BÀI 3 — Trắc nghiệm A/B/C/D (chọn chuột, đáp án 1 dòng)
+   ============================================================ */
+const mcqState = { e2Wrap: {}, e3Wrap: {} };
+const mcqData  = { e2Wrap: EX.bai2, e3Wrap: EX.bai3 };
+
+function renderMCQSet(wrapId, scoreId){
+  const data = mcqData[wrapId];
+  const wrap = document.getElementById(wrapId);
+  mcqState[wrapId] = {};
+  wrap.innerHTML = `
+    <div class="exercise-toolbar">
+      <button class="check-all-btn" data-action="check-mcq" data-wrap="${wrapId}" data-score="${scoreId}">✓ Kiểm tra đáp án</button>
+      <button class="reset-btn" data-action="reset-mcq" data-wrap="${wrapId}" data-score="${scoreId}">↺ Làm lại</button>
+    </div>
+  ` + data.map((item, qi) => `
+    <div class="ex-card" data-qi="${qi}">
+      <div class="ex-q-row">
+        <span class="ex-num">${qi+1}</span>
+        <span class="ex-q-text han">${item.q}</span>
+      </div>
+      <div class="ex-options">
+        ${Object.entries(item.options).map(([letter,text]) => `
+          <button class="opt-btn" data-action="select-mcq" data-wrap="${wrapId}" data-qi="${qi}" data-letter="${letter}">
+            <span class="opt-letter">${letter}</span><span class="han">${text}</span>
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function selectMCQ(btn){
+  const wrapId = btn.dataset.wrap;
+  const qi = btn.dataset.qi;
+  const letter = btn.dataset.letter;
+  const card = btn.closest('.ex-card');
+  if(card.dataset.locked === '1') return;
+  card.querySelectorAll('.opt-btn').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  mcqState[wrapId][qi] = letter;
+}
+
+function checkMCQ(wrapId, scoreId){
+  const data = mcqData[wrapId];
+  const wrap = document.getElementById(wrapId);
+  const cards = wrap.querySelectorAll('.ex-card');
+  let correctCount = 0;
+  cards.forEach((card)=>{
+    const qi = card.dataset.qi;
+    card.dataset.locked = '1';
+    const chosen = mcqState[wrapId][qi];
+    const answer = data[qi].answer;
+    if(chosen === answer) correctCount++;
+    card.querySelectorAll('.opt-btn').forEach(b=>{
+      b.classList.add('disabled');
+      const letter = b.dataset.letter;
+      if(letter === answer){
+        b.classList.add('correct');
+      } else if(letter === chosen && chosen !== answer){
+        b.classList.add('wrong');
+      }
+    });
+  });
+  const scoreEl = document.getElementById(scoreId);
+  scoreEl.style.display='block';
+  scoreEl.textContent = `Kết quả: ${correctCount} / ${data.length} câu đúng`;
+}
+
+function resetMCQ(wrapId, scoreId){
+  renderMCQSet(wrapId, scoreId);
+  document.getElementById(scoreId).style.display='none';
+}
+
+/* Event delegation cho toàn bộ khu vực bài tập MCQ */
+document.getElementById('e2Wrap').addEventListener('click', handleMCQClick);
+document.getElementById('e3Wrap').addEventListener('click', handleMCQClick);
+function handleMCQClick(e){
+  const target = e.target.closest('[data-action]');
+  if(!target) return;
+  const action = target.dataset.action;
+  if(action === 'select-mcq') selectMCQ(target);
+  else if(action === 'check-mcq') checkMCQ(target.dataset.wrap, target.dataset.score);
+  else if(action === 'reset-mcq') resetMCQ(target.dataset.wrap, target.dataset.score);
+}
+
+renderMCQSet('e2Wrap', 'e2Score');
+renderMCQSet('e3Wrap', 'e3Score');
+
+/* ============================================================
+   BÀI 4 — Dịch câu (tự thiết kế: textarea + nút hiện đáp án tham khảo)
+   ============================================================ */
+function renderE4(){
+  const wrap = document.getElementById('e4Wrap');
+  wrap.innerHTML = EX.bai4.map((item, i) => `
+    <div class="translate-item">
+      <div class="translate-vi">${i+1}. ${item.vi}</div>
+      <textarea class="translate-textarea han" placeholder="Nhập câu tiếng Trung của bạn..." rows="1"></textarea>
+      <button class="translate-toggle-btn" data-action="toggle-answer" data-idx="${i}">👁️ Xem đáp án tham khảo</button>
+      <div class="translate-answer han" data-answer-idx="${i}">${item.answer}</div>
+    </div>
+  `).join('');
+}
+document.getElementById('e4Wrap').addEventListener('click', function(e){
+  const target = e.target.closest('[data-action="toggle-answer"]');
+  if(!target) return;
+  const i = target.dataset.idx;
+  const el = document.querySelector('#e4Wrap [data-answer-idx="'+i+'"]');
+  el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+});
+renderE4();
+
+/* ============================================================
+   BÀI 5 — Đọc hội thoại + Đúng/Sai
+   ============================================================ */
+function renderDialogue(){
+  const wrap = document.getElementById('dialogueWrap');
+  wrap.innerHTML = `<div style="font-weight:800; color:var(--red-dark); margin-bottom:10px;">📖 Đọc đoạn hội thoại</div>` +
+    EX.bai5_dialogue.map(([name, line]) => `
+      <div class="dialogue-line">
+        <span class="dialogue-name han">${name}：</span>
+        <span class="han">${line}</span>
+      </div>
+    `).join('');
+}
+function renderE5(){
+  const wrap = document.getElementById('e5Wrap');
+  wrap.innerHTML = EX.bai5.map((item, i) => `
+    <div class="tf-item" data-idx="${i}">
+      <span class="tf-q han">${i+1}. ${item.q}</span>
+      <div class="tf-buttons">
+        <button class="tf-btn" data-action="tf-answer" data-idx="${i}" data-val="true">Đúng ✓</button>
+        <button class="tf-btn" data-action="tf-answer" data-idx="${i}" data-val="false">Sai ✗</button>
+      </div>
+      <div class="tf-explain" data-explain-idx="${i}">${item.explain}</div>
+    </div>
+  `).join('');
+}
+window.e5Answered = {};
+function answerTF(btn){
+  const i = btn.dataset.idx;
+  const val = btn.dataset.val === 'true';
+  const item = document.querySelector('#e5Wrap [data-idx="'+i+'"]');
+  if(item.dataset.locked === '1') return;
+  item.dataset.locked = '1';
+  const correct = EX.bai5[i].answer;
+  const buttons = item.querySelectorAll('.tf-btn');
+  buttons.forEach(b=>{
+    b.classList.add('disabled');
+    const bVal = b.dataset.val === 'true';
+    if(bVal === correct) b.classList.add('correct');
+    else if(b === btn) b.classList.add('wrong');
+  });
+  document.querySelector('#e5Wrap [data-explain-idx="'+i+'"]').style.display='block';
+  window.e5Answered[i] = (val === correct);
+  updateE5Score();
+}
+function updateE5Score(){
+  const total = EX.bai5.length;
+  const answered = Object.keys(window.e5Answered).length;
+  if(answered === 0) return;
+  let correct = 0;
+  Object.values(window.e5Answered).forEach(v=>{ if(v) correct++; });
+  const scoreEl = document.getElementById('e5Score');
+  scoreEl.style.display='block';
+  scoreEl.textContent = `Kết quả: ${correct} / ${answered} câu đúng` + (answered<total ? ` (còn ${total-answered} câu chưa trả lời)` : '');
+}
+document.getElementById('e5Wrap').addEventListener('click', function(e){
+  const target = e.target.closest('[data-action="tf-answer"]');
+  if(!target) return;
+  answerTF(target);
+});
+renderDialogue();
+renderE5();
+
+</script>
+</html>
